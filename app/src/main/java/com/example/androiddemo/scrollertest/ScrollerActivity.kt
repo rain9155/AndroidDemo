@@ -1,15 +1,17 @@
-package com.example.androiddemo.scrolltest
+package com.example.androiddemo.scrollertest
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_scroll.*
 
-class ScrollActivity : AppCompatActivity() {
+/**
+ * Scroller使用示例：
+ */
+class ScrollerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scroll)
+        setContentView(R.layout.activity_scroller)
 
     }
 

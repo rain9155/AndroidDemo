@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--LevelListDrawable  根据不同的等级(默认为0，最大为10000)，会切换到对应的Drawable-->
+
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/db_bitmap"
+        android:maxLevel="0"/>
+
+    <item
+        android:drawable="@drawable/scene"
+        android:maxLevel="1"/>
+
+</level-list>

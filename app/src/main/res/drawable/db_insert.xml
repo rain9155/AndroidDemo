@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--InsetDrawable  将其他Drawable内嵌到自己当中-->
+
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetTop="15dp"
+    android:insetBottom="15dp"
+    android:insetLeft="15dp"
+    android:insetRight="15dp">
+
+    <shape
+        android:shape="oval"
+        android:thickness="50dp"
+        android:innerRadius="50dp">
+
+        <stroke
+            android:color="#FF5000"
+            android:width="2dp"/>
+
+    </shape>
+
+</inset>

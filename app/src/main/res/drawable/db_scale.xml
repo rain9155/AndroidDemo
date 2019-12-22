@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--ScalerDawable  根据自己的等级(等级越大内部的Drawable看起来越大)将指定的Drawable缩放到一定比例-->
+
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/girl"
+    android:scaleGravity="center"
+    android:scaleHeight="50%"
+    android:scaleWidth="50%">
+
+</scale>

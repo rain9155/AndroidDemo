@@ -3,8 +3,10 @@ package com.example.androiddemo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androiddemo.drawabletest.DrawableActivity
 import com.example.androiddemo.listviewtest.ListActivity
-import com.example.androiddemo.scrolltest.ScrollActivity
+import com.example.androiddemo.scrollertest.ScrollerActivity
+import com.example.androiddemo.surfaceviewtest.SurfaceViewActivity
 import com.example.androiddemo.viewdraghelpertest.DragActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_to_scroll.setOnClickListener {
-            startActivity(Intent(this, ScrollActivity::class.java))
+            startActivity(Intent(this, ScrollerActivity::class.java))
         }
 
         btn_to_drag.setOnClickListener {
@@ -26,5 +28,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ListActivity::class.java))
         }
 
+        btn_to_drawable.setOnClickListener{
+            startActivity(Intent(this, DrawableActivity::class.java))
+        }
+
+        btn_to_surface.setOnClickListener {
+            startActivity(Intent(this, SurfaceViewActivity::class.java))
+        }
     }
 }

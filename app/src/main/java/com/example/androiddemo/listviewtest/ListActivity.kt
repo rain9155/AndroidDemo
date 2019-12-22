@@ -9,7 +9,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import android.view.ViewConfiguration
-import android.view.Window
 import android.widget.AbsListView
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.Toast
@@ -20,11 +19,14 @@ import kotlinx.android.synthetic.main.activity_list.*
 import kotlin.collections.ArrayList
 
 /**
- * ListView的使用技巧
+ * ListView使用示例：
  */
 class ListActivity : AppCompatActivity() {
 
-    private val TAG = "rain"
+    companion object{
+        private val TAG = ListActivity::class.java.simpleName
+    }
+
     private var adapter: ListViewAdapter? = null
     private var lastVisibleItemPosition = 0
     private var touchSlop = 0

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--ClipDrawable  根据自己当前的等级来裁剪另一个Drawable-->
+
+<clip xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/girl"
+    android:gravity="center"
+    android:clipOrientation="vertical">
+
+</clip>

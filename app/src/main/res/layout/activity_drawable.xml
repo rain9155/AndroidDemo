@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".drawabletest.DrawableActivity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_bitmap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BitmapDrawable"
+                android:background="@drawable/db_bitmap"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_insert"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="InsetDrawable"
+                android:layout_gravity="center"
+                android:background="@drawable/db_insert"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_shape"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="ShapeDrawable"
+                android:layout_gravity="center"
+                android:background="@drawable/db_shape"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_selector"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="SelectorDrawable"
+                android:layout_gravity="center"
+                android:background="@drawable/db_selector"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_layer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="LayerDrawable"
+                android:layout_gravity="center"
+                android:background="@drawable/db_layer"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_level_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/db_level_list"
+                android:text="LevelListDrawable"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_transition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TransitionDrawable"
+                android:background="@drawable/db_transition"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/db_scale"
+                android:text="ScaleDrawable"
+                android:textAllCaps="false"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_clip"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:text="ClipDrawable"
+                android:textAllCaps="false"
+                android:background="@drawable/db_clip"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--StateListDrawable  图片选择器-->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:dither="true"
+    android:constantSize="false"
+    android:variablePadding="false">
+
+    <!--选中时的背景-->
+    <item
+        android:state_selected="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/five"/>
+
+    <!--没有选中却按下的背景-->
+    <item
+        android:state_window_focused="true"
+        android:state_selected="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/two"/>
+
+    <!--没有选中也没有按下的背景-->
+    <item
+        android:state_window_focused="true"
+        android:state_selected="false"
+        android:state_pressed="false"
+        android:drawable="@drawable/three"/>
+
+    <!--选中但没有按下的背景-->
+    <item
+        android:state_selected="true"
+        android:state_pressed="false"
+        android:drawable="@drawable/four"/>
+
+    <!--获得焦点时的图片背景-->
+    <!--<item-->
+        <!--android:state_focused="true"-->
+        <!--android:drawable="@drawable/six"/>-->
+
+    <!--默认时的背景-->
+    <item
+       android:drawable="@drawable/one"/>
+
+</selector>

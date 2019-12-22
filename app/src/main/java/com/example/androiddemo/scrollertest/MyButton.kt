@@ -1,4 +1,4 @@
-package com.example.androiddemo.scrolltest
+package com.example.androiddemo.scrollertest
 
 import android.content.Context
 import android.util.AttributeSet
@@ -22,7 +22,9 @@ import androidx.appcompat.widget.AppCompatButton
  */
 class MyButton(context: Context?, attrs: AttributeSet?) : AppCompatButton(context, attrs) {
 
-    private val TAG = MyButton::class.java.simpleName
+    companion object{
+        private val TAG = MyButton::class.java.simpleName
+    }
 
     /* 1、初始化Scroller */
     private val mScroller: Scroller = Scroller(context)

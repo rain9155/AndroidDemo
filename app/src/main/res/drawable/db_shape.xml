@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--ShapeDrawable  通过颜色来构造图形-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--当shape为矩形（rectangle）时表示为四个角的弧度-->
+    <corners
+        android:radius="10dp"/>
+
+    <!--渐变填充-->
+    <gradient
+        android:angle="45"
+        android:startColor="#fff"
+        android:endColor="#000" />
+
+    <!--表示包含此shape的View的空白-->
+    <padding
+        android:bottom="17dp"
+        android:top="17dp"
+        android:left="17dp"
+        android:right="17dp"/>
+
+    <!--纯色填充，与gradient排斥-->
+    <solid/>
+
+    <!--指定shape大小，一般用ImageView配合scaleType属性使用-->
+    <size/>
+
+    <!--描边-->
+    <stroke
+        android:color="#000"
+        android:dashGap="3dp"
+        android:dashWidth="5dp"/>
+
+</shape>
