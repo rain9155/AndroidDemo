@@ -90,6 +90,7 @@ class MySurfaceView : SurfaceView, SurfaceHolder.Callback, Runnable {
             /* 5、获得画布，像在View中一样进行绘制 */
             mCanvas = mSurfaceHolder.lockCanvas()
             mCanvas?.drawColor(Color.YELLOW)
+            mPaint.textAlign = Paint.Align.CENTER
             mCanvas?.drawText("rain", width / 2f, height / 2f, mPaint)
             //draw something
         } catch (e: Exception) {

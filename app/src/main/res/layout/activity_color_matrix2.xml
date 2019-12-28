@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_girl"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/girl"/>
+
+    <TextView
+        android:id="@+id/tv_hue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="色调:50%"/>
+
+    <!--
+         android:max="":设置最大进度
+         android:progress=""：设置当前进度
+         android:secondaryProgress=""：设置第二进度
+         android:indeterminate=""：设置是否为不明确进度进度条
+         android:thumb="":设置seekbar滑动快的图片
+         android:progressDrawable="":进度条背景图片
+         android:thumbTint="":滑动块颜色,API21以上才有效
+     -->
+
+    <SeekBar
+        android:id="@+id/sb_hue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="50"/>
+
+    <TextView
+        android:id="@+id/tv_saturation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="饱和度:50%"/>
+
+
+    <SeekBar
+        android:id="@+id/sb_saturation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="50"/>
+
+    <TextView
+        android:id="@+id/tv_lum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="亮度:50%"/>
+
+    <SeekBar
+        android:id="@+id/sb_lum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="50"/>
+
+</LinearLayout>

@@ -11,6 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".viewtest.martix.BitmapActivity">
+        </activity>
+        <activity android:name=".viewtest.xfermode.XfermodeActivity">
+        </activity>
+        <activity android:name=".viewtest.shader.ShaderActivity">
+        </activity>
+        <activity android:name=".viewtest.canvas.CanvasActivity">
+        </activity>
+        <activity android:name=".viewtest.patheffect.PathEffectActivity">
+        </activity>
+        <activity android:name=".viewtest.ViewActivity">
+        </activity>
         <activity android:name=".surfaceviewtest.SurfaceViewActivity">
         </activity>
         <activity android:name=".MainActivity">
@@ -26,6 +38,10 @@
             android:name=".listviewtest.ListActivity"
             android:theme="@style/ListActivityTheme"/>
         <activity android:name=".drawabletest.DrawableActivity"/>
+        <activity android:name=".viewtest.martix.colormartix.ColorMatrixActivity1"/>
+        <activity android:name=".viewtest.martix.colormartix.ColorMatrixActivity2"/>
+        <activity android:name=".viewtest.martix.martix.MatrixActivity"/>
+        <activity android:name=".viewtest.martix.pixel.PixelActivity"/>
     </application>
 
 </manifest>
