@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".animationtest.AnimActivity">
+        </activity>
         <activity android:name=".viewtest.martix.BitmapActivity">
         </activity>
         <activity android:name=".viewtest.xfermode.XfermodeActivity">
@@ -42,6 +44,8 @@
         <activity android:name=".viewtest.martix.colormartix.ColorMatrixActivity2"/>
         <activity android:name=".viewtest.martix.martix.MatrixActivity"/>
         <activity android:name=".viewtest.martix.pixel.PixelActivity"/>
+        <activity android:name=".animationtest.animation.AnimationActivity2"/>
+        <activity android:name=".animationtest.animation.AnimationActivity1"/>
     </application>
 
 </manifest>

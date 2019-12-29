@@ -4,6 +4,8 @@ import android.content.Intent
 import android.graphics.ColorMatrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androiddemo.animationtest.AnimActivity
+import com.example.androiddemo.animationtest.animation.AnimationActivity2
 import com.example.androiddemo.drawabletest.DrawableActivity
 import com.example.androiddemo.listviewtest.ListActivity
 import com.example.androiddemo.scrollertest.ScrollerActivity
@@ -42,6 +44,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ViewActivity::class.java))
         }
 
-
+        cp_to_anim.setOnClickListener {
+            startActivity(Intent(this, AnimActivity::class.java))
+        }
     }
 }
