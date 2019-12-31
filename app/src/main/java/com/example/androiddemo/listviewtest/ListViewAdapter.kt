@@ -56,7 +56,7 @@ class ListViewAdapter(context: Context, private val datas: List<Int>) : BaseAdap
             convertView = mInflater.inflate(R.layout.item_list, null)
             viewHolder.imageView1 =
                 convertView.findViewById<View>(R.id.image_1) as ImageView
-            viewHolder.textView1 = convertView.findViewById<View>(R.id.text_1) as TextView
+            viewHolder.textView1 = convertView.findViewById<View>(R.id.text_view) as TextView
             convertView.tag = viewHolder
         } else { //通过Tag找到缓存的布局
             viewHolder = convertView.tag as ViewHolder

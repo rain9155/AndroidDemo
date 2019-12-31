@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_start_set1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="start Animator(together)"/>
+
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="textView1"
+        android:textColor="#fff"
+        android:layout_margin="50dp"/>
+
+    <Button
+        android:id="@+id/btn_start_set2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="start Animator(Sequentially)"/>
+
+
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textView2"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:background="#cc1e1e"
+        android:layout_margin="50dp"/>
+
+    <Button
+        android:id="@+id/btn_start_set3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="start Animator(Builder)"/>
+
+
+    <TextView
+        android:id="@+id/text_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textView2"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:background="#cc1e1e"
+        android:layout_margin="50dp"/>
+
+</LinearLayout>
+

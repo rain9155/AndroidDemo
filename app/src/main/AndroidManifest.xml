@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".animationtest.layoutanim.LayoutTransitionActivity">
+        </activity>
+        <activity android:name=".animationtest.layoutanim.LayoutAnimationActivity">
+        </activity>
         <activity android:name=".animationtest.AnimActivity">
         </activity>
         <activity android:name=".viewtest.martix.BitmapActivity">
@@ -46,6 +50,11 @@
         <activity android:name=".viewtest.martix.pixel.PixelActivity"/>
         <activity android:name=".animationtest.animation.AnimationActivity2"/>
         <activity android:name=".animationtest.animation.AnimationActivity1"/>
+        <activity android:name=".animationtest.animator.ValueAnimatorActivity"/>
+        <activity android:name=".animationtest.animator.ObjectAnimatorActivity"/>
+        <activity android:name=".animationtest.animator.ValuesHolderActivity"/>
+        <activity android:name=".animationtest.animator.AnimatorSetActivity"/>
+        <activity android:name=".animationtest.animator.XmlAnimatorActivity"/>
     </application>
 
 </manifest>

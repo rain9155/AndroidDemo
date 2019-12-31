@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_start_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start ValueAnimator(xml)"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#000"
+        android:textColor="#fff"
+        android:layout_margin="50dp"
+        android:text="Hello World!"/>
+
+    <Button
+        android:id="@+id/btn_start_object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start ObjectAnimator(xml)"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:textColor="#fff"
+        android:layout_margin="50dp"
+        android:text="Hello World!"/>
+
+    <Button
+        android:id="@+id/btn_start_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start AnimatorSet(xml)"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/text_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:textColor="#fff"
+        android:layout_margin="50dp"
+        android:text="Hello World!"/>
+
+</LinearLayout>

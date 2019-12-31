@@ -29,6 +29,48 @@
             android:layout_height="wrap_content"
             android:text="视图动画代码写法"/>
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_value_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属性动画之ValueAnimator"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_object_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属性动画之ObjectAnimator"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_values_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属性动画之PropertyValuesHolder"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_set_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属性动画之AnimatorSet"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_xml_animator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="属性动画之xml写法"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_layout_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="布局动画之LayoutAnimation"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_transition_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="布局动画之LayoutTransition"/>
+
 
     </com.google.android.material.chip.ChipGroup>
 
