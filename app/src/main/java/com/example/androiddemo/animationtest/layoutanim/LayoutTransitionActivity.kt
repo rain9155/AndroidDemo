@@ -94,6 +94,7 @@ class LayoutTransitionActivity : AppCompatActivity() {
     /**
      * LayoutTransition类使用
      */
+    @SuppressLint("ObjectAnimatorBinding")
     private fun  doLayoutTransition(){
         /* 1、创建LayoutTransition */
         val layoutTransition = LayoutTransition()

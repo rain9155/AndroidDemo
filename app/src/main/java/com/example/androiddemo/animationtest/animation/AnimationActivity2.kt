@@ -2,9 +2,17 @@ package com.example.androiddemo.animationtest.animation
 
 import android.os.Bundle
 import android.view.animation.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
+import kotlinx.android.synthetic.main.activity_animation1.*
 import kotlinx.android.synthetic.main.activity_animation2.*
+import kotlinx.android.synthetic.main.activity_animation2.btn_alpha
+import kotlinx.android.synthetic.main.activity_animation2.btn_rotate
+import kotlinx.android.synthetic.main.activity_animation2.btn_scale
+import kotlinx.android.synthetic.main.activity_animation2.btn_set
+import kotlinx.android.synthetic.main.activity_animation2.btn_translate
+import kotlinx.android.synthetic.main.activity_animation2.text_view
 
 /**
  * 视图动画之通过java代码实现alpha、scale、translate、rotate、set动画效果:
@@ -120,6 +128,11 @@ class AnimationActivity2 : AppCompatActivity() {
         }
         btn_set.setOnClickListener{
             text_view.startAnimation(setAnimation)
+        }
+
+        text_view.setOnClickListener {
+            Toast.makeText(this, "Hello!", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 }

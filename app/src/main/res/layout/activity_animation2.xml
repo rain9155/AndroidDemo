@@ -3,48 +3,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btn_scale"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Scale"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btn_alpha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alpha"
-            android:textAllCaps="false"/>
+            android:orientation="horizontal">
 
 
-        <Button
-            android:id="@+id/btn_rotate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rotate"
-            android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btn_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scale"
+                android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/btn_translate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Translate"
-            android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btn_alpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alpha"
+                android:textAllCaps="false"/>
 
-        <Button
-            android:id="@+id/btn_set"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Set"
-            android:textAllCaps="false"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rotate"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_translate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Translate"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set"
+                android:textAllCaps="false"/>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/text_view"

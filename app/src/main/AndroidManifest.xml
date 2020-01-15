@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".recyclerviewtest.RecyclerActivity">
+        </activity>
         <activity android:name=".animationtest.layoutanim.LayoutTransitionActivity">
         </activity>
         <activity android:name=".animationtest.layoutanim.LayoutAnimationActivity">

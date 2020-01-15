@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
 import kotlinx.android.synthetic.main.activity_animation1.*
@@ -27,7 +28,6 @@ import kotlinx.android.synthetic.main.activity_animation1.*
  * LinearInterpolator                 以常量速率改变
  * OvershootInterpolator              向前甩一定值后再回到原来位置
  */
-//如何启动动画
 class AnimationActivity1 : AppCompatActivity() {
 
 
@@ -64,6 +64,11 @@ class AnimationActivity1 : AppCompatActivity() {
         val setAnimation = AnimationUtils.loadAnimation(this, R.anim.animation_set)
         btn_set.setOnClickListener{
             text_view.startAnimation(setAnimation)
+        }
+
+        text_view.setOnClickListener {
+            Toast.makeText(this, "Hello!", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 }
