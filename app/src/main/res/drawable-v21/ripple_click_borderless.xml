@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--自定义无界的ripper，color为点击的颜色-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorAccent">
+</ripple>

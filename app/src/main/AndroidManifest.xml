@@ -11,52 +11,52 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".recyclerviewtest.RecyclerActivity">
-        </activity>
-        <activity android:name=".animationtest.layoutanim.LayoutTransitionActivity">
-        </activity>
-        <activity android:name=".animationtest.layoutanim.LayoutAnimationActivity">
-        </activity>
-        <activity android:name=".animationtest.AnimActivity">
-        </activity>
-        <activity android:name=".viewtest.martix.BitmapActivity">
-        </activity>
-        <activity android:name=".viewtest.xfermode.XfermodeActivity">
-        </activity>
-        <activity android:name=".viewtest.shader.ShaderActivity">
-        </activity>
-        <activity android:name=".viewtest.canvas.CanvasActivity">
-        </activity>
-        <activity android:name=".viewtest.patheffect.PathEffectActivity">
-        </activity>
-        <activity android:name=".viewtest.ViewActivity">
-        </activity>
-        <activity android:name=".surfaceviewtest.SurfaceViewActivity">
-        </activity>
+        <activity android:name=".FromActivity"></activity>
+        <activity
+            android:name=".animation.reveal.RevealActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".recyclerview.RecyclerActivity" />
+        <activity android:name=".animationtest.layoutanim.LayoutTransitionActivity" />
+        <activity android:name=".animationtest.layoutanim.LayoutAnimationActivity" />
+        <activity android:name=".animationtest.AnimActivity" />
+        <activity android:name=".view.martix.BitmapActivity" />
+        <activity android:name=".view.xfermode.XfermodeActivity" />
+        <activity android:name=".view.shader.ShaderActivity" />
+        <activity android:name=".view.canvas.CanvasActivity" />
+        <activity android:name=".view.patheffect.PathEffectActivity" />
+        <activity android:name=".view.ViewActivity" />
+        <activity android:name=".surfaceview.SurfaceViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".scrollertest.ScrollerActivity"/>
-        <activity android:name=".viewdraghelpertest.DragActivity"/>
+        <activity android:name=".scroller.ScrollerActivity" />
+        <activity android:name=".viewdraghelper.DragActivity" />
         <activity
-            android:name=".listviewtest.ListActivity"
-            android:theme="@style/ListActivityTheme"/>
-        <activity android:name=".drawabletest.DrawableActivity"/>
-        <activity android:name=".viewtest.martix.colormartix.ColorMatrixActivity1"/>
-        <activity android:name=".viewtest.martix.colormartix.ColorMatrixActivity2"/>
-        <activity android:name=".viewtest.martix.martix.MatrixActivity"/>
-        <activity android:name=".viewtest.martix.pixel.PixelActivity"/>
-        <activity android:name=".animationtest.animation.AnimationActivity2"/>
-        <activity android:name=".animationtest.animation.AnimationActivity1"/>
-        <activity android:name=".animationtest.animator.ValueAnimatorActivity"/>
-        <activity android:name=".animationtest.animator.ObjectAnimatorActivity"/>
-        <activity android:name=".animationtest.animator.ValuesHolderActivity"/>
-        <activity android:name=".animationtest.animator.AnimatorSetActivity"/>
-        <activity android:name=".animationtest.animator.XmlAnimatorActivity"/>
+            android:name=".listview.ListActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".drawable.DrawableActivity" />
+        <activity android:name=".view.martix.colormartix.ColorMatrixActivity1" />
+        <activity android:name=".view.martix.colormartix.ColorMatrixActivity2" />
+        <activity android:name=".view.martix.martix.MatrixActivity" />
+        <activity android:name=".view.martix.pixel.PixelActivity" />
+        <activity android:name=".animationtest.animation.AnimationActivity2" />
+        <activity android:name=".animationtest.animation.AnimationActivity1" />
+        <activity android:name=".animationtest.animator.ValueAnimatorActivity" />
+        <activity android:name=".animationtest.animator.ObjectAnimatorActivity" />
+        <activity android:name=".animationtest.animator.ValuesHolderActivity" />
+        <activity android:name=".animationtest.animator.AnimatorSetActivity" />
+        <activity android:name=".animationtest.animator.XmlAnimatorActivity" />
+        <activity android:name=".animation.ripple.RippleActivity" />
+        <activity android:name=".animation.state.StateActivity" />
+        <activity
+            android:name=".material.ToolbarActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".animation.transition.FromActivity" />
+        <activity android:name=".animation.transition.ToActivity" />
     </application>
 
 </manifest>

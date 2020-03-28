@@ -71,14 +71,14 @@
         app:layout_constraintTop_toBottomOf="@id/ll_items1"/>
 
     <!--
-    LayoutAnimation的xml实现，给ViewGroup添加android:layoutAnimation="@anim/animation_layout"
+    LayoutAnimation的xml实现，给ViewGroup添加android:layoutAnimation="@anim/anim_layout"
      -->
 
     <LinearLayout
         android:id="@+id/ll_items2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layoutAnimation="@anim/animation_layout"
+        android:layoutAnimation="@anim/anim_layout"
         android:orientation="vertical"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"

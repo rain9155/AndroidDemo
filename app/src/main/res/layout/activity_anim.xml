@@ -71,6 +71,29 @@
             android:layout_height="wrap_content"
             android:text="布局动画之LayoutTransition"/>
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_reveal_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="揭露动画"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_ripple_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="波纹动画"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_state_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视图状态动画"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_activity_transition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity转场动画"/>
 
     </com.google.android.material.chip.ChipGroup>
 

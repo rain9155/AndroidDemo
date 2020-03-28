@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--自定义有界的ripper，color为点击的颜色，<item>这里可以定义它边界的颜色和形状</item>-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorAccent">
+
+    <!--或者以下也可以-->
+    <!--<item android:drawable="@color/colorPrimary"/>-->
+
+    <item>
+        <shape android:shape="rectangle">
+        <solid android:color="@android:color/white"/>
+    </shape>
+    </item>
+
+</ripple>

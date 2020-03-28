@@ -1,20 +1,17 @@
 package com.example.androiddemo
 
 import android.content.Intent
-import android.graphics.ColorMatrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.androiddemo.animationtest.AnimActivity
-import com.example.androiddemo.animationtest.animation.AnimationActivity2
-import com.example.androiddemo.drawabletest.DrawableActivity
-import com.example.androiddemo.listviewtest.ListActivity
-import com.example.androiddemo.recyclerviewtest.RecyclerActivity
-import com.example.androiddemo.scrollertest.ScrollerActivity
-import com.example.androiddemo.surfaceviewtest.SurfaceViewActivity
-import com.example.androiddemo.viewdraghelpertest.DragActivity
-import com.example.androiddemo.viewtest.ViewActivity
+import com.example.androiddemo.drawable.DrawableActivity
+import com.example.androiddemo.listview.ListActivity
+import com.example.androiddemo.material.ToolbarActivity
+import com.example.androiddemo.recyclerview.RecyclerActivity
+import com.example.androiddemo.scroller.ScrollerActivity
+import com.example.androiddemo.surfaceview.SurfaceViewActivity
+import com.example.androiddemo.viewdraghelper.DragActivity
+import com.example.androiddemo.view.ViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -53,6 +50,10 @@ class MainActivity : AppCompatActivity() {
 
         cp_to_recycler.setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
+        }
+
+        cp_to_material.setOnClickListener {
+            startActivity(Intent(this, ToolbarActivity::class.java))
         }
 
     }
