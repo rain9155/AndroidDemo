@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androiddemo.animationtest.AnimActivity
 import com.example.androiddemo.drawable.DrawableActivity
+import com.example.androiddemo.jetpack.JetpackActivity
 import com.example.androiddemo.listview.ListActivity
 import com.example.androiddemo.material.ToolbarActivity
 import com.example.androiddemo.recyclerview.RecyclerActivity
@@ -54,6 +55,10 @@ class MainActivity : AppCompatActivity() {
 
         cp_to_material.setOnClickListener {
             startActivity(Intent(this, ToolbarActivity::class.java))
+        }
+
+        cp_to_jetpack.setOnClickListener {
+            startActivity(Intent(this, JetpackActivity::class.java))
         }
 
     }
