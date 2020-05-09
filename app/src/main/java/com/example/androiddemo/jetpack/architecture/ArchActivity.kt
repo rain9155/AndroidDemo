@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androiddemo.R
 import com.example.androiddemo.jetpack.architecture.lifecycle.LifecycleActivity
+import com.example.androiddemo.jetpack.architecture.livedata.LiveDataActivity
 import kotlinx.android.synthetic.main.activity_arc.*
 
 class ArchActivity : AppCompatActivity() {
@@ -15,6 +16,10 @@ class ArchActivity : AppCompatActivity() {
 
         cp_to_lifecycle.setOnClickListener {
             startActivity(Intent(this, LifecycleActivity::class.java))
+        }
+
+        cp_to_livedata.setOnClickListener {
+            startActivity(Intent(this, LiveDataActivity::class.java))
         }
 
     }

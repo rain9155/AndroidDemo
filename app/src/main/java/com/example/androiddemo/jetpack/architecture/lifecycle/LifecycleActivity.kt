@@ -30,7 +30,7 @@ import com.example.androiddemo.R
  * Lifecycle：生命周期感应组件
  * LifecycleRegistry：android中Lifecycle的默认实现类
  *
- * Lifecycle使用步骤(依赖于androidX，如果不依赖于androidX，需要导入lifecycle-runtime)：
+ * Lifecycle使用步骤：
  * 1、定义继承自LifecycleObserver的观察者；
  * 2、在观察者中使用@OnLifecycleEvent注解标记需要调用的方法
  * 3、把观察者注册进Lifecycle中去.
