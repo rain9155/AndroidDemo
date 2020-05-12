@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".jetpack.architecture.livedata.LiveDataActivity"></activity>
+        <activity android:name=".jetpack.architecture.viewmodel.ViewModelActivity"></activity>
+        <activity android:name=".jetpack.architecture.livedata.LiveDataActivity" />
         <activity android:name=".jetpack.architecture.lifecycle.LifecycleActivity" />
         <activity android:name=".jetpack.architecture.ArchActivity" />
         <activity android:name=".jetpack.JetpackActivity" />

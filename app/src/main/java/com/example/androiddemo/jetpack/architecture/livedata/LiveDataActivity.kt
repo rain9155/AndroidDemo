@@ -8,6 +8,10 @@ import com.example.androiddemo.R
 import kotlinx.android.synthetic.main.activity_live_data.*
 
 /**
+ * 参考：
+ * http://liuwangshu.cn/application/jetpack/4-livedata-use.html
+ * https://developer.android.com/topic/libraries/architecture/livedata
+ *
  * 可观察的数据源LiveData：
  * LiveData它是具有生命周期感应能力的、可观察的数据存储器，它具有以下三个特点：
  * 1、只有当观察者处于活跃状态(STARTED、RESUMED), LiveData才会发送更新通知给它，而处于非活跃状态(PAUSED、STOPPED)的观察者则不会收到更新通知
