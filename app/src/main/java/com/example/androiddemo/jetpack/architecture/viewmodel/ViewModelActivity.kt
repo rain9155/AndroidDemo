@@ -9,6 +9,8 @@ import androidx.lifecycle.*
 import com.example.androiddemo.R
 
 /**
+ * 参考：https://developer.android.com/topic/libraries/architecture/viewmodel#sharing
+ *
  * 界面数据存储器ViewModel：
  * ViewModel可以在Activity/Fragment配置更改时保存自身，等Activity/Fragment重建时恢复自身，从而达到保存恢复数据的目的，
  * 避免了重复获取数据的资源浪费，同时ViewModel更有效地把视图数据处理逻辑与视图控制逻辑分离，它具有以下三个特点：
@@ -32,7 +34,9 @@ import com.example.androiddemo.R
  *
  * 注意：
  * 1、ViewModel绝不能引用视图、Lifecycle或可能存储对Activity上下文的引用的任何类；
- * 2、如果ViewModel需要Application上下文，可以扩展 AndroidViewModel类并设置用于接收Application的构造函数.
+ * 2、如果ViewModel需要Application上下文，可以扩展 AndroidViewModel类并设置用于接收Application的构造函数;
+ * 3、当系统进程由于low memory被杀死重建后，此时ViewModel保存的数据会丢失，如果想要在系统杀死进程后数据还得以保存，
+ *    可以使用OnSaveInstanceState方法或使用SaveStateHandler for ViewModel(参考：https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate)
  */
 class ViewModelActivity : AppCompatActivity() {
 
