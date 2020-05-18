@@ -1,0 +1,38 @@
+<data>
+
+    <user>
+        <name>rain</name>
+        <age>19</age>
+        <city>广州</city>
+        <hobby>跑步、跳舞</hobby>
+    </user>
+
+    <user>
+        <name>jack</name>
+        <age>29</age>
+        <city>北京</city>
+        <hobby>游泳、健身</hobby>
+    </user>
+
+    <user>
+        <name>mary</name>
+        <age>22</age>
+        <city>上海</city>
+        <hobby>唱歌、看电影</hobby>
+    </user>
+
+    <user>
+        <name>carey</name>
+        <age>22</age>
+        <city>上海</city>
+        <hobby>听音乐、学习</hobby>
+    </user>
+
+    <user>
+        <name>care</name>
+        <age>25</age>
+        <city>深圳</city>
+        <hobby>打游戏、看动漫</hobby>
+    </user>
+
+</data>

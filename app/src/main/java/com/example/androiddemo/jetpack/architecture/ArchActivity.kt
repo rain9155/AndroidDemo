@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.androiddemo.R
 import com.example.androiddemo.jetpack.architecture.lifecycle.LifecycleActivity
 import com.example.androiddemo.jetpack.architecture.livedata.LiveDataActivity
+import com.example.androiddemo.jetpack.architecture.room.RoomActivity
 import com.example.androiddemo.jetpack.architecture.viewmodel.ViewModelActivity
 import kotlinx.android.synthetic.main.activity_arc.*
 
@@ -27,5 +28,8 @@ class ArchActivity : AppCompatActivity() {
             startActivity(Intent(this, ViewModelActivity::class.java))
         }
 
+        cp_to_room.setOnClickListener {
+            startActivity(Intent(this, RoomActivity::class.java))
+        }
     }
 }

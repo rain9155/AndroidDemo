@@ -9,14 +9,14 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.example.androiddemo.jetpack.architecture.viewmodel.Fragment1"
+        android:name="com.example.androiddemo.jetpack.architecture.viewmodel.fragment.Fragment1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.example.androiddemo.jetpack.architecture.viewmodel.Fragment2"
+        android:name="com.example.androiddemo.jetpack.architecture.viewmodel.fragment.Fragment2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>

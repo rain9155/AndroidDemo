@@ -1,4 +1,4 @@
-package com.example.androiddemo.jetpack.architecture.viewmodel
+package com.example.androiddemo.jetpack.architecture.viewmodel.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 import com.example.androiddemo.R
+import com.example.androiddemo.jetpack.architecture.viewmodel.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_2.*
 
 

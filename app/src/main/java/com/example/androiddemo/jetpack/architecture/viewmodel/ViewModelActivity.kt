@@ -85,6 +85,8 @@ class ViewModelActivity : AppCompatActivity() {
          super.onCleared()
          //todo: clear the subscription
      }
+
+     data class User(var name: String)
  }
 
 /**
@@ -105,5 +107,3 @@ class SharedViewModel : ViewModel(){
     }
 
 }
-
-data class User(var name: String)

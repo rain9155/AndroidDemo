@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".jetpack.architecture.viewmodel.Fragment1">
+    tools:context=".jetpack.architecture.viewmodel.fragment.Fragment1">
 
     <SeekBar
         android:id="@+id/seek_bar"
