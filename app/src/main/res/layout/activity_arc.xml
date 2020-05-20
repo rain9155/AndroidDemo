@@ -40,6 +40,12 @@
             android:layout_width="wrap_content"
             android:text="Room学习"/>
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_binding"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="DataBinding学习"/>
+
     </com.google.android.material.chip.ChipGroup>
 
 

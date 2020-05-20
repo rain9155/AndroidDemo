@@ -58,36 +58,35 @@ class ViewModelActivity : AppCompatActivity() {
         })
     }
 
-}
-
- /** 1、扩展ViewModel类，在里面定义LiveData； */
- class MyViewModel : ViewModel(){
-     private val users: MutableLiveData<List<User>> by lazy {
-        MutableLiveData<List<User>>().also {
-            loadUsers()
+    /** 1、扩展ViewModel类，在里面定义LiveData； */
+    class MyViewModel : ViewModel(){
+        private val users: MutableLiveData<List<User>> by lazy {
+            MutableLiveData<List<User>>().also {
+                loadUsers()
+            }
         }
-     }
 
-     private fun loadUsers(){
-         //执行异步调用，异步结果返回后设置给LiveData
-         Handler().postDelayed({
-             users.value = listOf(
-                 User("rain"), User("chenjianyu"), User("hello")
-             )
-         }, 1000)
-     }
+        private fun loadUsers(){
+            //执行异步调用，异步结果返回后设置给LiveData
+            Handler().postDelayed({
+                users.value = listOf(
+                    User("rain"), User("chenjianyu"), User("hello")
+                )
+            }, 1000)
+        }
 
-     fun getUsers(): LiveData<List<User>>{
-         return users
-     }
+        fun getUsers(): LiveData<List<User>>{
+            return users
+        }
 
-     override fun onCleared() {
-         super.onCleared()
-         //todo: clear the subscription
-     }
+        override fun onCleared() {
+            super.onCleared()
+            //todo: clear the subscription
+        }
 
-     data class User(var name: String)
- }
+        data class User(var name: String)
+    }
+}
 
 /**
  * 在Fragment之间共享的ViewModel

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androiddemo.R
+import com.example.androiddemo.jetpack.architecture.databinding.BindingActivity
 import com.example.androiddemo.jetpack.architecture.lifecycle.LifecycleActivity
 import com.example.androiddemo.jetpack.architecture.livedata.LiveDataActivity
 import com.example.androiddemo.jetpack.architecture.room.RoomActivity
@@ -30,6 +31,10 @@ class ArchActivity : AppCompatActivity() {
 
         cp_to_room.setOnClickListener {
             startActivity(Intent(this, RoomActivity::class.java))
+        }
+
+        cp_to_binding.setOnClickListener {
+            startActivity(Intent(this, BindingActivity::class.java))
         }
     }
 }
