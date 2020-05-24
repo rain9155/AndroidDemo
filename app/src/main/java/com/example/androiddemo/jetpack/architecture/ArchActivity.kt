@@ -7,10 +7,14 @@ import com.example.androiddemo.R
 import com.example.androiddemo.jetpack.architecture.databinding.BindingActivity
 import com.example.androiddemo.jetpack.architecture.lifecycle.LifecycleActivity
 import com.example.androiddemo.jetpack.architecture.livedata.LiveDataActivity
+import com.example.androiddemo.jetpack.architecture.navigation.NavigationActivity
 import com.example.androiddemo.jetpack.architecture.room.RoomActivity
 import com.example.androiddemo.jetpack.architecture.viewmodel.ViewModelActivity
 import kotlinx.android.synthetic.main.activity_arc.*
 
+/**
+ * Android Jetpack库中的Architecture Component学习
+ */
 class ArchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +39,10 @@ class ArchActivity : AppCompatActivity() {
 
         cp_to_binding.setOnClickListener {
             startActivity(Intent(this, BindingActivity::class.java))
+        }
+
+        cp_to_navigation.setOnClickListener {
+            startActivity(Intent(this, NavigationActivity::class.java))
         }
     }
 }

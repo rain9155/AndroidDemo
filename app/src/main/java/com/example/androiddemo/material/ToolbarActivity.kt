@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.example.androiddemo.R
 import kotlinx.android.synthetic.main.activity_toolbar.*
 
@@ -37,7 +36,7 @@ class ToolbarActivity : AppCompatActivity() {
         setSupportActionBar(tool_bar)
 
         //加载菜单（toolbar做法）,如果不使用setSupportActionBar(mTooBar); 则要用以下方法加载菜单
-        //mTooBar.inflateMenu(R.menu.toolbar_menu);
+        //mTooBar.inflateMenu(R.menu.menu_toolbar);
 
         tool_bar.setNavigationOnClickListener{
             finish()
@@ -53,7 +52,7 @@ class ToolbarActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
         return true
     }
 }

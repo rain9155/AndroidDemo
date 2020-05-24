@@ -32,7 +32,8 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:fitsSystemWindows="true"
-        android:layout_height="300dp">
+        android:layout_height="300dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
         <!--与CollapsingToolbarLayout配合使用-->
         <!--app:contentScrim="@color/colorAccent" - 折叠时，控制导航栏的背景渐变
@@ -84,7 +85,7 @@
                 android:id="@+id/tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/back"
+                app:navigationIcon="@drawable/ic_arrow_back"
                 app:popupTheme="@style/PopupTheme"
                 app:layout_collapseMode="pin">
 

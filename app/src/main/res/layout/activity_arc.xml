@@ -46,6 +46,12 @@
             android:layout_width="wrap_content"
             android:text="DataBinding学习"/>
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_navigation"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Navigation学习"/>
+
     </com.google.android.material.chip.ChipGroup>
 
 

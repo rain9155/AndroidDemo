@@ -1,17 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.Bridge">
+        <!-- toolbar颜色 -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- 状态栏颜色 -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- 悬浮按钮颜色 -->
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- 背景颜色 -->
+        <item name="android:windowBackground">@android:color/white</item>
 
-        <!--在这里可以配置所有的Activity的切换动画-->
+        <!-- 在这里可以配置所有的Activity的切换动画5.0以前也适用）-->
         <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
     </style>
 
-    <!-- 使用style方式定义activity切换动画（5.0以前也适用） -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="ActivityAnimation">
         <item name="android:activityOpenEnterAnimation">@anim/anim_slide_in_top</item>
         <item name="android:activityOpenExitAnimation">@anim/anim_slide_out_top</item>
@@ -26,22 +34,9 @@
     </style>
 
     <!--CollapsingToolBarLayout折叠为ToolBar后的字体样式-->
-    <style name="CollapsingCollapsedTextAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <style name="CollapsingCollapsedTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@android:color/white</item>
-    </style>
-
-    <!-- ToolBar的样式  -->
-    <style name="ToolBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!--toolbar颜色-->
-        <item name="android:colorPrimary" tools:targetApi="lollipop">@color/colorAccent</item>
-        <!--状态栏颜色-->
-        <item name="android:colorPrimaryDark" tools:targetApi="lollipop">@color/colorAccent</item>
-        <!--窗口背景颜色-->
-        <item name="android:windowBackground">@android:color/white</item>
-        <!--悬浮按钮颜色-->
-        <item name="colorAccent">@color/colorAccent</item>
-
     </style>
 
     <!-- ToolBar子标题字体样式 -->
@@ -50,24 +45,22 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <!-- 弹出菜单的样式 -->
+    <!-- ToolBar弹出菜单的样式 -->
     <style name="PopupTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
-        <!--菜单的背景色-->
+        <!--弹出菜单的背景色-->
         <item name="android:colorBackground">@color/colorAccent</item>
+        <!--控制弹出菜单的位置-->
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
     </style>
 
-    <!-- 使菜单位于toolbar之下 -->
     <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!-- 是否覆盖锚点，false为不盖住Toolbar -->
         <item name="overlapAnchor">false</item>
+        <!-- 弹出层垂直方向上的偏移，即在竖直方向上距离Toolbar的距离，值为负则会盖住Toolbar -->
+        <item name="android:dropDownVerticalOffset">5dp</item>
+        <!-- 弹出层水平方向上的偏移，即距离屏幕左边的距离，负值会导致右边出现空隙 -->
+        <item name="android:dropDownHorizontalOffset">0dp</item>
     </style>
-
-    <!--transparentText （透明）样式-->
-    <style name="transparentText" parent="TextAppearance.AppCompat.Small">
-        <item name="android:textColor">#00000000</item>
-        <item name="android:textSize">15sp</item>
-    </style>
-
 
     <!--通过theme给button设置背景，color相当于Button的background，所以xml中不用再设置background-->
     <style name="ButtonTheme">
@@ -75,9 +68,5 @@
         <item name="colorButtonNormal">?attr/colorPrimary</item>
     </style>
 
-    <style name="NoActionBarTheme" parent="AppTheme">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
 </resources>

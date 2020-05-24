@@ -11,17 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".jetpack.architecture.databinding.BindingActivity"></activity>
+        <activity
+            android:name=".jetpack.architecture.navigation.NavigationActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".jetpack.architecture.databinding.BindingActivity" />
         <activity android:name=".jetpack.architecture.room.RoomActivity" />
         <activity android:name=".jetpack.architecture.viewmodel.ViewModelActivity" />
         <activity android:name=".jetpack.architecture.livedata.LiveDataActivity" />
         <activity android:name=".jetpack.architecture.lifecycle.LifecycleActivity" />
         <activity android:name=".jetpack.architecture.ArchActivity" />
         <activity android:name=".jetpack.JetpackActivity" />
-        <activity android:name=".FromActivity" />
         <activity
             android:name=".animation.reveal.RevealActivity"
-            android:theme="@style/NoActionBarTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".animationtest.layoutanim.LayoutTransitionActivity" />
         <activity android:name=".animationtest.layoutanim.LayoutAnimationActivity" />
@@ -44,7 +46,7 @@
         <activity android:name=".viewdraghelper.DragActivity" />
         <activity
             android:name=".listview.ListActivity"
-            android:theme="@style/NoActionBarTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".drawable.DrawableActivity" />
         <activity android:name=".view.martix.colormartix.ColorMatrixActivity1" />
         <activity android:name=".view.martix.colormartix.ColorMatrixActivity2" />
@@ -61,7 +63,7 @@
         <activity android:name=".animation.state.StateActivity" />
         <activity
             android:name=".material.ToolbarActivity"
-            android:theme="@style/NoActionBarTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".animation.transition.FromActivity" />
         <activity android:name=".animation.transition.ToActivity" />
     </application>
