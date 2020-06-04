@@ -100,7 +100,7 @@ class NavigationActivity : AppCompatActivity() {
 
         //向NavController添加目的地更改的监听，该接口在当前目的地或其参数发生更改时调用
         navController.addOnDestinationChangedListener{navController, destination, args ->
-            Log.d(TAG, "addOnDestinationChangedListener(), destination = $destination")
+            Log.d(TAG, "addOnDestinationChangedListener(), destination = $destination， curDestination = ${navController.currentDestination}")
             if(topLevelDestinationIds.contains(destination.id)){
                 tool_bar.visibility = View.VISIBLE
                 bottom_nav.visibility = View.VISIBLE
@@ -108,6 +108,7 @@ class NavigationActivity : AppCompatActivity() {
                 tool_bar.visibility = View.GONE
                 bottom_nav.visibility = View.GONE
             }
+
         }
 
     }

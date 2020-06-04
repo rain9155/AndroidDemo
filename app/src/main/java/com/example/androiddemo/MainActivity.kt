@@ -3,6 +3,7 @@ package com.example.androiddemo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.androiddemo.animationtest.AnimActivity
 import com.example.androiddemo.drawable.DrawableActivity
 import com.example.androiddemo.jetpack.JetpackActivity
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         cp_to_scroll.setOnClickListener {
             startActivity(Intent(this, ScrollerActivity::class.java))
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         cp_to_jetpack.setOnClickListener {
             startActivity(Intent(this, JetpackActivity::class.java))
         }
+
 
     }
 }

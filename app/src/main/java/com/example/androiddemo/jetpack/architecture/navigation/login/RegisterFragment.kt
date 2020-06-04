@@ -26,7 +26,9 @@ class RegisterFragment : Fragment() {
 
         btn_register_login.setOnClickListener {
             isLogin = true
-            findNavController().navigate(R.id.action_nav_login_to_peopleFragment)
+            //findNavController().navigate(R.id.action_nav_login_to_peopleFragment)
+            //回退到people_fragment
+            findNavController().popBackStack(R.id.people_fragment, false)
         }
     }
 }
