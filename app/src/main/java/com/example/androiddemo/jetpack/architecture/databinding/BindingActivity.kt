@@ -2,13 +2,10 @@ package com.example.androiddemo.jetpack.architecture.databinding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.util.MutableDouble
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.*
 import com.example.androiddemo.R
 import com.example.androiddemo.databinding.ActivityBindingBinding
-import kotlinx.android.synthetic.main.activity_binding.*
 
 /**
  * 参考：

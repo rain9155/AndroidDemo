@@ -1,14 +1,8 @@
 package com.example.androiddemo.jetpack.architecture.databinding.util
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Build
-import android.util.Log
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.annotation.ColorRes
-import androidx.annotation.RequiresApi
 import androidx.databinding.BindingAdapter
 import com.example.androiddemo.R
 

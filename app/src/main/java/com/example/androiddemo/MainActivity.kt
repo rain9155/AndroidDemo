@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         cp_to_scroll.setOnClickListener {
             startActivity(Intent(this, ScrollerActivity::class.java))
         }

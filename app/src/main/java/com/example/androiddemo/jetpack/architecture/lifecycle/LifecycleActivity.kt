@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.OnLifecycleEvent
 import com.example.androiddemo.R
 
