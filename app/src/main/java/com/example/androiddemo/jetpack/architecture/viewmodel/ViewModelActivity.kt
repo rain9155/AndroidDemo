@@ -35,8 +35,8 @@ import com.example.androiddemo.R
  * 注意：
  * 1、ViewModel绝不能引用视图、Lifecycle或可能存储对Activity上下文的引用的任何类；
  * 2、如果ViewModel需要Application上下文，可以扩展 AndroidViewModel类并设置用于接收Application的构造函数;
- * 3、当系统进程由于low memory被杀死重建后，此时ViewModel保存的数据会丢失，如果想要在系统杀死进程后数据还得以保存，
- *    可以使用OnSaveInstanceState方法或使用SaveStateHandler for ViewModel(参考：https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate)
+ * 3、当系统进程由于low memory被杀死重建后，此时ViewModel保存的数据会丢失，如果想要在系统杀死进程后数据还得以保存，可以使用OnSaveInstanceState方法或使用SaveStateHandler for ViewModel
+ *   (参考：https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate、https://www.codenong.com/js82d49ea06029/)
  */
 class ViewModelActivity : AppCompatActivity() {
 
