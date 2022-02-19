@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/login_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.login.LoginFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.login.LoginFragment"
         android:label="登陆"
         tools:layout="@layout/fragment_login">
 
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/register_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.login.RegisterFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.login.RegisterFragment"
         android:label="注册"
         tools:layout="@layout/fragment_register"/>
 

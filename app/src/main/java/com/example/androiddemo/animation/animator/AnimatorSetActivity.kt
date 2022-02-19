@@ -1,16 +1,13 @@
-package com.example.androiddemo.animationtest.animator
+package com.example.androiddemo.animation.animator
 
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
 import kotlinx.android.synthetic.main.activity_set_animator.*
-import kotlinx.android.synthetic.main.activity_value_animator.*
 
 /**
  * 属性动画之AnimatorSet（联合动画）
@@ -73,9 +70,9 @@ class AnimatorSetActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_animator)
 
-        btn_start_set1.setOnClickListener(View.OnClickListener {
+        btn_start_set1.setOnClickListener {
             doPlayTogetherAnim()
-        })
+        }
 
         btn_start_set2.setOnClickListener {
             doPlaySequentiallyAnim()

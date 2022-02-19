@@ -1,15 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.Bridge">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
         <!-- toolbar颜色 -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!-- 状态栏颜色 -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!-- 悬浮按钮颜色 -->
         <item name="colorAccent">@color/colorAccent</item>
-        <!-- 背景颜色 -->
-        <item name="android:windowBackground">@android:color/white</item>
 
         <!-- 在这里可以配置所有的Activity的切换动画5.0以前也适用）-->
         <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
@@ -19,6 +17,10 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="ActivityAnimation">
         <item name="android:activityOpenEnterAnimation">@anim/anim_slide_in_top</item>
@@ -67,10 +69,5 @@
         <item name="buttonStyle">@style/Widget.AppCompat.Button</item>
         <item name="colorButtonNormal">?attr/colorPrimary</item>
     </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
 
 </resources>

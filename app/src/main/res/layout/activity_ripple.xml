@@ -14,7 +14,6 @@
         android:clickable="true"
         android:gravity="center"
         android:text="Background: ripple (by code)"
-        android:textColor="@android:color/black"
         android:layout_marginStart="30dp"
         android:translationZ="3dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +30,6 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:gravity="center"
         android:text="Foreground: ripple (by xml)"
-        android:textColor="@android:color/black"
         android:translationZ="3dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tv_puppet1"
@@ -48,7 +46,6 @@
         android:layout_marginStart="30dp"
         android:gravity="center"
         android:text="Background: ripple borderless"
-        android:textColor="@android:color/black"
         android:translationZ="3dp"
         app:layout_constraintTop_toBottomOf="@id/tv_puppet1"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -63,7 +60,6 @@
         android:foreground="?android:attr/selectableItemBackgroundBorderless"
         android:gravity="center"
         android:text="Foreground: ripple borderless"
-        android:textColor="@android:color/black"
         app:layout_constraintTop_toBottomOf="@id/tv_puppet2"
         app:layout_constraintLeft_toRightOf="@id/tv_puppet3"
         app:layout_constraintRight_toRightOf="parent"
@@ -79,7 +75,6 @@
         android:gravity="center"
         android:layout_marginStart="30dp"
         android:text="Background: custom ripple borderless"
-        android:textColor="@android:color/black"
         app:layout_constraintTop_toBottomOf="@id/tv_puppet3"
         app:layout_constraintLeft_toLeftOf="parent"
         android:focusable="true" />
@@ -92,7 +87,6 @@
         android:gravity="center"
         android:text="Background: custom ripple"
         android:background="@drawable/ripple_click"
-        android:textColor="@android:color/black"
         app:layout_constraintTop_toBottomOf="@id/tv_puppet4"
         app:layout_constraintLeft_toRightOf="@id/tv_puppet5"
         app:layout_constraintRight_toRightOf="parent"
@@ -132,7 +126,5 @@
         android:theme="@style/ButtonTheme"
         app:layout_constraintTop_toBottomOf="@id/btn_puppet1"
         app:layout_constraintLeft_toLeftOf="parent"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

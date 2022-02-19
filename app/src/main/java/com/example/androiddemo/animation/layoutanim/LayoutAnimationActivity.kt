@@ -1,4 +1,4 @@
-package com.example.androiddemo.animationtest.layoutanim
+package com.example.androiddemo.animation.layoutanim
 
 import android.os.Bundle
 import android.view.animation.*

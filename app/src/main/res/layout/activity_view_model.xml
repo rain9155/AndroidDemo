@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".jetpack.architecture.viewmodel.ViewModelActivity">
+    tools:context=".jetpack.viewmodel.ViewModelActivity">
 
     <fragment
         android:id="@+id/fragment1"
-        android:name="com.example.androiddemo.jetpack.architecture.viewmodel.fragment.Fragment1"
+        android:name="com.example.androiddemo.jetpack.viewmodel.fragment.TopFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
     <fragment
         android:id="@+id/fragment2"
-        android:name="com.example.androiddemo.jetpack.architecture.viewmodel.fragment.Fragment2"
+        android:name="com.example.androiddemo.jetpack.viewmodel.fragment.BottomFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>

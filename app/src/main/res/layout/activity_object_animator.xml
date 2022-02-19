@@ -29,7 +29,7 @@
         android:textAllCaps="false"
         android:text="start ObjectAnimator(Object)"/>
 
-    <com.example.androiddemo.animationtest.animator.view.OfObjectObjectAnimatorView
+    <com.example.androiddemo.animation.animator.view.OfObjectObjectAnimatorView
         android:id="@+id/of_object_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

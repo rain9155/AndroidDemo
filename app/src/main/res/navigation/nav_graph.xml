@@ -21,19 +21,19 @@
        -->
     <fragment
         android:id="@+id/message_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.other.MessageFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.other.MessageFragment"
         android:label="收件箱"
         tools:layout="@layout/fragment_message"/>
 
     <fragment
         android:id="@+id/setting_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.other.SettingFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.other.SettingFragment"
         android:label="设置"
         tools:layout="@layout/fragment_setting" />
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.home.HomeFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.home.HomeFragment"
         android:label="首页"
         tools:layout="@layout/fragment_home" >
 
@@ -58,13 +58,13 @@
 
     <fragment
         android:id="@+id/detail_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.home.DetailFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.home.DetailFragment"
         android:label="详情页"
         tools:layout="@layout/fragment_detail" />
 
     <fragment
         android:id="@+id/people_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.people.PeopleFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.people.PeopleFragment"
         android:label="个人"
         tools:layout="@layout/fragment_people" >
 
@@ -80,7 +80,7 @@
 
     <fragment
         android:id="@+id/collection_fragment"
-        android:name="com.example.androiddemo.jetpack.architecture.navigation.people.CollectionFragment"
+        android:name="com.example.androiddemo.jetpack.navigation.people.CollectionFragment"
         android:label="收藏"
         tools:layout="@layout/fragment_collection">
 

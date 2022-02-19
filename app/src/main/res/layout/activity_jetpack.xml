@@ -16,11 +16,55 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_arch"
+            android:id="@+id/cp_to_lifecycle"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Architecture学习"/>
+            android:text="Lifecycle学习"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_livedata"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="LiveData学习"/>
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_viewmodel"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="ViewModel学习"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_room"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Room学习"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_binding"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="DataBinding学习"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_navigation"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Navigation学习"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_mvvm"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="MVVM学习"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_startup"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="AppStartup学习"/>
 
     </com.google.android.material.chip.ChipGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

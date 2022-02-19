@@ -45,7 +45,7 @@ class RevealActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun launchRevealAnimation() {
-        var animation = iv_reveal.animation;
+        val animation = iv_reveal.animation;
         if(animation != null){
            return
         }

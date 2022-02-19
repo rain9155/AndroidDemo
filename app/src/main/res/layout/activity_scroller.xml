@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent">
 
-    <com.example.androiddemo.scroller.MyButton
+    <com.example.androiddemo.view.scroller.ScrollerButton
         android:id="@+id/btn_scroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

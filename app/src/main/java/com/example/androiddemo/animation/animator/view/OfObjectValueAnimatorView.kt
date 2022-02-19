@@ -1,4 +1,4 @@
-package com.example.androiddemo.animationtest.animator.view
+package com.example.androiddemo.animation.animator.view
 
 import android.animation.TypeEvaluator
 import android.animation.ValueAnimator

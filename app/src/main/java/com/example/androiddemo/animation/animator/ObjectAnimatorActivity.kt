@@ -1,4 +1,4 @@
-package com.example.androiddemo.animationtest.animator
+package com.example.androiddemo.animation.animator
 
 import android.animation.ObjectAnimator
 import android.animation.TypeEvaluator
@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import com.example.androiddemo.animationtest.animator.view.Point
+import com.example.androiddemo.animation.animator.view.Point
 import kotlinx.android.synthetic.main.activity_object_animator.*
 
 /**
@@ -56,17 +56,17 @@ class ObjectAnimatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_object_animator)
 
         //启动ObjectAnimator动画
-        btn_start_object1.setOnClickListener(View.OnClickListener {
+        btn_start_object1.setOnClickListener {
             doAnimator()
-        })
+        }
 
-        text_view.setOnClickListener(View.OnClickListener {
+        text_view.setOnClickListener {
             Toast.makeText(
                 this@ObjectAnimatorActivity,
                 "Hello!",
                 Toast.LENGTH_SHORT
             ).show()
-        })
+        }
 
         btn_start_object2.setOnClickListener {
             do2Animator()
@@ -112,7 +112,7 @@ class ObjectAnimatorActivity : AppCompatActivity() {
             fraction: Float,
             startValue: Point,
             endValue: Point
-        ):Point {
+        ): Point {
             val radius: Float = startValue.radius + fraction * (endValue.radius - startValue.radius)
             return Point(radius)
         }

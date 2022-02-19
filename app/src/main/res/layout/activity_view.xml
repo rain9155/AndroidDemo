@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ViewActivity">
 
     <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_canvas"
+            android:id="@+id/cp_to_scroller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Canvas使用"/>
+            android:text="Scroller学习"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_patheffect"
+            android:id="@+id/cp_to_draghelper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PathEffect使用"/>
+            android:text="ViewDragHelper学习"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_shader"
+            android:id="@+id/cp_to_listview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Shader使用"/>
+            android:text="ListView学习"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_xfermode"
+            android:id="@+id/cp_to_surfaceview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xfermode使用"/>
+            android:text="SurfaceView学习"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_matrix"
+            android:id="@+id/cp_to_recyclerview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Matrix使用"/>
-
+            android:text="RecyclerView学习"/>
 
     </com.google.android.material.chip.ChipGroup>
 

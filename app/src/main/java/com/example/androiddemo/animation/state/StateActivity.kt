@@ -27,7 +27,7 @@ class StateActivity : AppCompatActivity() {
         //StateListAnimator通过代码加载
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val stateListAnimator = AnimatorInflater.loadStateListAnimator(this, R.animator.selector_press_state)
-            tv_state1.stateListAnimator = stateListAnimator
+            tv_state_anim.stateListAnimator = stateListAnimator
         }
     }
 }

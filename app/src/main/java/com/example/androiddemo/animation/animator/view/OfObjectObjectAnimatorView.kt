@@ -1,14 +1,11 @@
-package com.example.androiddemo.animationtest.animator.view
+package com.example.androiddemo.animation.animator.view
 
-import android.animation.ObjectAnimator
-import android.animation.TypeEvaluator
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
-import kotlinx.android.synthetic.main.activity_object_animator.*
 
 /**
  * ObjectAnimator实例:

@@ -1,5 +1,53 @@
 <resources>
     <string name="app_name">AndroidDemo</string>
+    <string name="title_activity_anim">AnimActivity</string>
+    <string name="title_activity_animation">AnimationActivity</string>
+    <string name="title_activity_animation_xml">AnimationXmlActivity</string>
+    <string name="title_activity_value_animator">ValueAnimatorActivity</string>
+    <string name="title_activity_object_animator">ObjectAnimatorActivity</string>
+    <string name="title_activity_property_animator">PropertyValuesHolderAnimatorActivity</string>
+    <string name="title_activity_animator_set">AnimatorSetActivity</string>
+    <string name="title_activity_xml_animator">XmlAnimatorActivity</string>
+    <string name="title_activity_layout_animation">LayoutAnimationActivity</string>
+    <string name="title_activity_layout_transition">LayoutTransitionActivity</string>
+    <string name="title_activity_reveal">RevealActivity</string>
+    <string name="title_activity_ripple">RippleActivity</string>
+    <string name="title_activity_state">StateActivity</string>
+    <string name="title_activity_from">FromActivity</string>
+    <string name="title_activity_to">ToActivity</string>
+    <string name="title_activity_customview">CustomViewActivity</string>
+    <string name="title_activity_canvas">CanvasActivity</string>
+    <string name="title_activity_patheffect">PathEffectActivity</string>
+    <string name="title_activity_shader">ShaderActivity</string>
+    <string name="title_activity_xfermode">XfermodeActivity</string>
+    <string name="title_activity_bitmap">BitmapActivity</string>
+    <string name="title_activity_color_matrix">ColorMatrixActivity</string>
+    <string name="title_activity_color_matrix_api">ColorMatrixApiActivity</string>
+    <string name="title_activity_matrix">MatrixActivity</string>
+    <string name="title_activity_pixel">PixelActivity</string>
+    <string name="title_activity_drawable">DrawableActivity</string>
+    <string name="title_activity_toolbar">ToolbarActivity</string>
+    <string name="title_activity_jetpack">JetpackActivity</string>
+    <string name="title_activity_binding">BindingActivity</string>
+    <string name="title_activity_lifecycle">LifecycleActivity</string>
+    <string name="title_activity_livedata">LiveDataActivity</string>
+    <string name="title_activity_mvvm">MvvmActivity</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_activity_room">RoomActivity</string>
+    <string name="title_activity_startup">AppStartupActivity</string>
+    <string name="title_activity_viewmodel">ViewModelActivity</string>
+    <string name="title_activity_view">ViewActivity</string>
+    <string name="title_activity_listview">ListViewActivity</string>
+    <string name="title_activity_recyclerview">RecyclerViewActivity</string>
+    <string name="title_activity_scroller">ScrollerActivity</string>
+    <string name="title_activity_surfaceview">SurfaceViewActivity</string>
+    <string name="title_activity_drag">DragActivity</string>
+    <string name="scale">Scale</string>
+    <string name="alpha">Alpha</string>
+    <string name="rotate">Rotate</string>
+    <string name="translate">Translate</string>
+    <string name="set">Set</string>
+    <string name="short_text">Hello World</string>
     <string name="large_text">AppBarLayout
 AppBarLayout是一个实现了很多材料设计特性的垂直的LinearLayout，它能响应滑动事件。
         必须在它的子view上设置app:layout_scrollFlags属性或者是在代码中调用setScrollFlags()设置这个属性。
@@ -24,18 +72,4 @@ NestedScrollView
         在新版的support-v4兼容包里面有一个NestedScrollView控件，这个控件其实和普通的ScrollView并没有多大的区别，这个控件其实是Meterial Design中设计的一个控件，目的是跟MD中的其他控件兼容。应该说在MD中，RecyclerView代替了ListView，而NestedScrollView代替了ScrollView，他们两个都可以用来跟ToolBar交互，实现上拉下滑中ToolBar的变化。在NestedScrollView的名字中其实就可以看出他的作用了，Nested是嵌套的意思，而ToolBar基本需要嵌套使用。
 FloatingActionButton
         FloatingActionButton就比较简单了，就是一个漂亮的按钮，其本质是一个ImageVeiw。有一点要注意，Meterial Design引入了海拔（或者说高度）的概念，就是所有的view都有了高度，他们像贴纸一样，一层一层贴在手机屏幕上，而FloatingActionButton的海拔最高，它贴在所有view的最上面，没有view能覆盖它。</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_mvvm">MvvmActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
-
 </resources>

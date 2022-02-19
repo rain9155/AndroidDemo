@@ -7,13 +7,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.androiddemo.jetpack.architecture.databinding.MyViewModel" />
+            type="com.example.androiddemo.jetpack.databinding.BindingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".jetpack.architecture.databinding.BindingActivity">
+        tools:context=".jetpack.databinding.BindingActivity">
 
         <TextView
             android:id="@+id/tv_likes"

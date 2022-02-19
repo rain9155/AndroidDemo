@@ -7,7 +7,6 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_group"
         android:layout_width="match_parent"
@@ -18,37 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_scroll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scroller学习"/>
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_drag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ViewDragHelper学习"/>
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ListView学习"/>
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_drawable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Drawable学习"/>
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_surface"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SurfaceView学习"/>
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_view"
+            android:id="@+id/cp_to_custom_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="自定义View学习"/>
@@ -60,10 +29,10 @@
             android:text="动画学习"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_recycler"
+            android:id="@+id/cp_to_drawable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RecyclerView学习"/>
+            android:text="Drawable学习"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/cp_to_material"
@@ -76,9 +45,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="jetpack学习"/>
-        
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内置View学习"/>
 
     </com.google.android.material.chip.ChipGroup>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

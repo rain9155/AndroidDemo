@@ -1,10 +1,9 @@
-package com.example.androiddemo.animationtest.animator
+package com.example.androiddemo.animation.animator
 
 import android.animation.Keyframe
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
@@ -63,17 +62,17 @@ class ValuesHolderActivity : AppCompatActivity() {
         setContentView(R.layout.activity_holder_animator)
 
         //启动PropertyValuesHolder动画
-        btn_start.setOnClickListener(View.OnClickListener {
+        btn_start.setOnClickListener {
             doAnimator()
-        })
+        }
 
-        text_view.setOnClickListener(View.OnClickListener {
+        text_view.setOnClickListener {
             Toast.makeText(
                 this@ValuesHolderActivity,
                 "Hello!",
                 Toast.LENGTH_SHORT
             ).show()
-        })
+        }
 
         //启动KeyFrame动画
         btn_start_keyFame.setOnClickListener {

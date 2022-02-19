@@ -1,4 +1,4 @@
-package com.example.androiddemo.animationtest
+package com.example.androiddemo.animation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,11 +8,11 @@ import com.example.androiddemo.animation.reveal.RevealActivity
 import com.example.androiddemo.animation.ripple.RippleActivity
 import com.example.androiddemo.animation.state.StateActivity
 import com.example.androiddemo.animation.transition.FromActivity
-import com.example.androiddemo.animationtest.animation.AnimationActivity1
-import com.example.androiddemo.animationtest.animation.AnimationActivity2
-import com.example.androiddemo.animationtest.animator.*
-import com.example.androiddemo.animationtest.layoutanim.LayoutAnimationActivity
-import com.example.androiddemo.animationtest.layoutanim.LayoutTransitionActivity
+import com.example.androiddemo.animation.animation.AnimationXmlActivity
+import com.example.androiddemo.animation.animation.AnimationActivity
+import com.example.androiddemo.animation.animator.*
+import com.example.androiddemo.animation.layoutanim.LayoutAnimationActivity
+import com.example.androiddemo.animation.layoutanim.LayoutTransitionActivity
 import kotlinx.android.synthetic.main.activity_anim.*
 
 /**
@@ -25,11 +25,11 @@ class AnimActivity : AppCompatActivity() {
         setContentView(R.layout.activity_anim)
 
         cp_to_animation1.setOnClickListener {
-            startActivity(Intent(this, AnimationActivity1::class.java))
+            startActivity(Intent(this, AnimationXmlActivity::class.java))
         }
 
         cp_to_animation2.setOnClickListener {
-            startActivity(Intent(this, AnimationActivity2::class.java))
+            startActivity(Intent(this, AnimationActivity::class.java))
         }
 
         cp_to_value_animator.setOnClickListener {

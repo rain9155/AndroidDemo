@@ -5,13 +5,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.androiddemo.jetpack.architecture.mvvm.viewModel.MvvmViewModel" />
+            type="com.example.androiddemo.jetpack.mvvm.viewModel.MvvmViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".jetpack.architecture.mvvm.ui.MvvmActivity">
+        tools:context=".jetpack.mvvm.ui.MvvmActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"

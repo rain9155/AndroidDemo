@@ -1,11 +1,9 @@
-package com.example.androiddemo.animationtest.animator
+package com.example.androiddemo.animation.animator
 
 import android.animation.Animator
 import android.animation.ValueAnimator
-import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
@@ -18,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_value_animator.*
  * 构造器:ValueAnimator.ofXX
  * public static ValueAnimator ofInt(int... values)
  * public static ValueAnimator ofFloat(float... values)
- * public static ValueAnimator ofObject(TypeEvaluator evaluator, Object... values) --- 示例在com\example\androiddemo\animationtest\animator\view\OfObjectValueAnimatorView.kt中
+ * public static ValueAnimator ofObject(TypeEvaluator evaluator, Object... values) --- 示例在com\example\androiddemo\animation\animator\view\OfObjectObjectAnimatorView.kt中
  * int..., float..., Object... --- 可变参数长参数,可以传入任何数量的值,传进去的值列表，就表示动画时的变化范围
  * TypeEvaluator evaluator     --- 自定义的Evaluator,根据当前动画的显示进度，计算出当前进度下对应的值
  * 如：ofInt(2,90,45)，就表示从数值2变化到数字90再变化到数字45
@@ -57,17 +55,17 @@ class ValueAnimatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_value_animator)
 
         //开始ValueAnimator动画
-        btn_start_value1.setOnClickListener(View.OnClickListener {
+        btn_start_value1.setOnClickListener {
             doAnimator()
-        })
+        }
 
-        text_view.setOnClickListener(View.OnClickListener {
+        text_view.setOnClickListener {
             Toast.makeText(
                 this@ValueAnimatorActivity,
                 "Hello!",
                 Toast.LENGTH_SHORT
             ).show()
-        })
+        }
 
         //ValueAnimator的ofObject方法使用
         btn_start_value2.setOnClickListener {
@@ -90,12 +88,13 @@ class ValueAnimatorActivity : AppCompatActivity() {
         }
 
         /* 2、添加监听 */
-        valueAnimator?.addUpdateListener(AnimatorUpdateListener { animation ->
+        valueAnimator?.addUpdateListener { animation ->
             val value = animation.animatedValue as Int
             text_view.layout(
                 text_view.left, value,
-                text_view.right, text_view.height + value)
-        })
+                text_view.right, text_view.height + value
+            )
+        }
         //监听动画变化时四个状态
         valueAnimator?.addListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator) {

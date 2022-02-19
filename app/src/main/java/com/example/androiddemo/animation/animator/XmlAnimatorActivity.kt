@@ -1,4 +1,4 @@
-package com.example.androiddemo.animationtest.animator
+package com.example.androiddemo.animation.animator
 
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
@@ -25,9 +25,9 @@ class XmlAnimatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_xml_animator)
 
 
-        btn_start_value.setOnClickListener(View.OnClickListener {
+        btn_start_value.setOnClickListener {
             doValueAnimator()
-        })
+        }
 
         btn_start_object.setOnClickListener {
             doObjectAnimator()
