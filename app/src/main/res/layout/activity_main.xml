@@ -52,6 +52,12 @@
             android:layout_height="wrap_content"
             android:text="内置View学习"/>
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/cp_to_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="音视频学习"/>
+
     </com.google.android.material.chip.ChipGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

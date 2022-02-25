@@ -14,6 +14,7 @@ import com.example.androiddemo.view.scroller.ScrollerActivity
 import com.example.androiddemo.view.surfaceview.SurfaceViewActivity
 import com.example.androiddemo.view.viewdraghelper.DragActivity
 import com.example.androiddemo.customview.CustomViewActivity
+import com.example.androiddemo.media.MediaActivity
 import com.example.androiddemo.view.ViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -51,6 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         cp_to_view.setOnClickListener {
             startActivity(Intent(this, ViewActivity::class.java))
+        }
+
+        cp_to_media.setOnClickListener {
+            startActivity(Intent(this, MediaActivity::class.java))
         }
     }
 }

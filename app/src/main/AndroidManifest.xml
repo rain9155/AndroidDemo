@@ -4,6 +4,7 @@
     package="com.example.androiddemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -20,8 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- animation start -->
         <activity
             android:name=".animation.AnimActivity"
             android:label="@string/title_activity_anim"/>
@@ -68,9 +67,6 @@
         <activity
             android:name=".animation.transition.ToActivity"
             android:label="@string/title_activity_to"/>
-        <!-- animation end -->
-
-        <!-- custom view start -->
         <activity
             android:name=".customview.CustomViewActivity"
             android:label="@string/title_activity_customview"/>
@@ -101,15 +97,9 @@
         <activity
             android:name=".customview.martix.pixel.PixelActivity"
             android:label="@string/title_activity_pixel"/>
-        <!-- custom view end -->
-
-        <!-- drawable start -->
         <activity
             android:name=".drawable.DrawableActivity"
             android:label="@string/title_activity_drawable"/>
-        <!-- drawable end -->
-
-        <!-- jetpack start -->
         <activity
             android:name=".jetpack.JetpackActivity"
             android:label="@string/title_activity_jetpack"/>
@@ -138,28 +128,10 @@
         <activity
             android:name=".jetpack.startup.AppStartupActivity"
             android:label="@string/title_activity_startup"/>
-        <!-- AppStartup的ContentProvider，通过Merge rule markers编写Initializer合并规则(https://developer.android.com/studio/build/manifest-merge#merge_rule_markers) -->
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="${applicationId}.androidx-startup"
-            android:exported="false"
-            tools:node="merge">
-            <!-- 如果声明的Initializer含有依赖的Initializer，则依赖会和声明的Initializer一起被AppStartup发现，无需额外声明依赖的Initializer -->
-            <meta-data
-                android:name="com.example.androiddemo.jetpack.startup.InitializerC"
-                android:value="androidx.startup"
-                tools:node="remove" />
-        </provider>
-        <!-- jetpack end -->
-
-        <!-- material start -->
         <activity
             android:name=".material.ToolbarActivity"
             android:label="@string/title_activity_toolbar"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!-- material end -->
-
-        <!-- view start -->
         <activity
             android:name=".view.ViewActivity"
             android:label="@string/title_activity_view"/>
@@ -179,6 +151,24 @@
             android:name=".view.listview.ListViewActivity"
             android:label="@string/title_activity_listview"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!-- view end -->
+        <activity
+            android:name=".media.MediaActivity"
+            android:label="@string/title_activity_media"/>
+        <activity
+            android:name=".media.audio.AudioActivity"
+            android:label="@string/title_activity_audio"/>
+
+        <!-- AppStartup的ContentProvider，通过Merge rule markers编写Initializer合并规则(https://developer.android.com/studio/build/manifest-merge#merge_rule_markers) -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <!-- 如果声明的Initializer含有依赖的Initializer，则依赖会和声明的Initializer一起被AppStartup发现，无需额外声明依赖的Initializer -->
+            <meta-data
+                android:name="com.example.androiddemo.jetpack.startup.InitializerC"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
     </application>
 </manifest>
