@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
+        android:name="androidx.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,140 +26,143 @@
         </activity>
         <activity
             android:name=".animation.AnimActivity"
-            android:label="@string/title_activity_anim"/>
+            android:label="@string/title_activity_anim" />
         <activity
             android:name=".animation.animation.AnimationActivity"
-            android:label="@string/title_activity_animation"/>
+            android:label="@string/title_activity_animation" />
         <activity
             android:name=".animation.animation.AnimationXmlActivity"
-            android:label="@string/title_activity_animation_xml"/>
+            android:label="@string/title_activity_animation_xml" />
         <activity
             android:name=".animation.animator.ValueAnimatorActivity"
-            android:label="@string/title_activity_value_animator"/>
+            android:label="@string/title_activity_value_animator" />
         <activity
             android:name=".animation.animator.ObjectAnimatorActivity"
-            android:label="@string/title_activity_object_animator"/>
+            android:label="@string/title_activity_object_animator" />
         <activity
             android:name=".animation.animator.ValuesHolderActivity"
-            android:label="@string/title_activity_property_animator"/>
+            android:label="@string/title_activity_property_animator" />
         <activity
             android:name=".animation.animator.AnimatorSetActivity"
-            android:label="@string/title_activity_animator_set"/>
+            android:label="@string/title_activity_animator_set" />
         <activity
             android:name=".animation.animator.XmlAnimatorActivity"
-            android:label="@string/title_activity_xml_animator"/>
+            android:label="@string/title_activity_xml_animator" />
         <activity
             android:name=".animation.layoutanim.LayoutTransitionActivity"
-            android:label="@string/title_activity_layout_animation"/>
+            android:label="@string/title_activity_layout_animation" />
         <activity
             android:name=".animation.layoutanim.LayoutAnimationActivity"
-            android:label="@string/title_activity_layout_transition"/>
+            android:label="@string/title_activity_layout_transition" />
         <activity
             android:name=".animation.reveal.RevealActivity"
             android:label="@string/title_activity_reveal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".animation.ripple.RippleActivity"
-            android:label="@string/title_activity_ripple"/>
+            android:label="@string/title_activity_ripple" />
         <activity
             android:name=".animation.state.StateActivity"
-            android:label="@string/title_activity_state"/>
+            android:label="@string/title_activity_state" />
         <activity
             android:name=".animation.transition.FromActivity"
-            android:label="@string/title_activity_from"/>
+            android:label="@string/title_activity_from" />
         <activity
             android:name=".animation.transition.ToActivity"
-            android:label="@string/title_activity_to"/>
+            android:label="@string/title_activity_to" />
         <activity
             android:name=".customview.CustomViewActivity"
-            android:label="@string/title_activity_customview"/>
+            android:label="@string/title_activity_customview" />
         <activity
             android:name=".customview.canvas.CanvasActivity"
-            android:label="@string/title_activity_canvas"/>
+            android:label="@string/title_activity_canvas" />
         <activity
             android:name=".customview.patheffect.PathEffectActivity"
-            android:label="@string/title_activity_patheffect"/>
+            android:label="@string/title_activity_patheffect" />
         <activity
             android:name=".customview.shader.ShaderActivity"
-            android:label="@string/title_activity_shader"/>
+            android:label="@string/title_activity_shader" />
         <activity
             android:name=".customview.xfermode.XfermodeActivity"
-            android:label="@string/title_activity_xfermode"/>
+            android:label="@string/title_activity_xfermode" />
         <activity
             android:name=".customview.martix.BitmapActivity"
-            android:label="@string/title_activity_bitmap"/>
+            android:label="@string/title_activity_bitmap" />
         <activity
             android:name=".customview.martix.colormartix.ColorMatrixActivity"
-            android:label="@string/title_activity_color_matrix"/>
+            android:label="@string/title_activity_color_matrix" />
         <activity
             android:name=".customview.martix.colormartix.ColorMatrixApiActivity"
-            android:label="@string/title_activity_color_matrix_api"/>
+            android:label="@string/title_activity_color_matrix_api" />
         <activity
             android:name=".customview.martix.martix.MatrixActivity"
-            android:label="@string/title_activity_matrix"/>
+            android:label="@string/title_activity_matrix" />
         <activity
             android:name=".customview.martix.pixel.PixelActivity"
-            android:label="@string/title_activity_pixel"/>
+            android:label="@string/title_activity_pixel" />
         <activity
             android:name=".drawable.DrawableActivity"
-            android:label="@string/title_activity_drawable"/>
+            android:label="@string/title_activity_drawable" />
         <activity
             android:name=".jetpack.JetpackActivity"
-            android:label="@string/title_activity_jetpack"/>
+            android:label="@string/title_activity_jetpack" />
         <activity
             android:name=".jetpack.databinding.BindingActivity"
-            android:label="@string/title_activity_binding"/>
+            android:label="@string/title_activity_binding" />
         <activity
             android:name=".jetpack.room.RoomActivity"
-            android:label="@string/title_activity_room"/>
+            android:label="@string/title_activity_room" />
         <activity
             android:name=".jetpack.viewmodel.ViewModelActivity"
-            android:label="@string/title_activity_viewmodel"/>
+            android:label="@string/title_activity_viewmodel" />
         <activity
             android:name=".jetpack.livedata.LiveDataActivity"
-            android:label="@string/title_activity_livedata"/>
+            android:label="@string/title_activity_livedata" />
         <activity
             android:name=".jetpack.lifecycle.LifecycleActivity"
-            android:label="@string/title_activity_lifecycle"/>
+            android:label="@string/title_activity_lifecycle" />
         <activity
             android:name=".jetpack.mvvm.ui.MvvmActivity"
             android:label="@string/title_activity_mvvm" />
         <activity
             android:name=".jetpack.navigation.NavigationActivity"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".jetpack.startup.AppStartupActivity"
-            android:label="@string/title_activity_startup"/>
+            android:label="@string/title_activity_startup" />
         <activity
             android:name=".material.ToolbarActivity"
             android:label="@string/title_activity_toolbar"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.ViewActivity"
-            android:label="@string/title_activity_view"/>
+            android:label="@string/title_activity_view" />
         <activity
             android:name=".view.recyclerview.RecyclerViewActivity"
-            android:label="@string/title_activity_recyclerview"/>
+            android:label="@string/title_activity_recyclerview" />
         <activity
             android:name=".view.surfaceview.SurfaceViewActivity"
-            android:label="@string/title_activity_surfaceview"/>
+            android:label="@string/title_activity_surfaceview" />
         <activity
             android:name=".view.scroller.ScrollerActivity"
-            android:label="@string/title_activity_scroller"/>
+            android:label="@string/title_activity_scroller" />
         <activity
             android:name=".view.viewdraghelper.DragActivity"
-            android:label="@string/title_activity_drag"/>
+            android:label="@string/title_activity_drag" />
         <activity
             android:name=".view.listview.ListViewActivity"
             android:label="@string/title_activity_listview"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".media.MediaActivity"
-            android:label="@string/title_activity_media"/>
+            android:label="@string/title_activity_media" />
         <activity
             android:name=".media.audio.AudioActivity"
-            android:label="@string/title_activity_audio"/>
+            android:label="@string/title_activity_audio" />
+        <activity
+            android:name=".media.video.VideoActivity"
+            android:label="@string/title_activity_video"/>
 
         <!-- AppStartup的ContentProvider，通过Merge rule markers编写Initializer合并规则(https://developer.android.com/studio/build/manifest-merge#merge_rule_markers) -->
         <provider
@@ -164,6 +170,7 @@
             android:authorities="${applicationId}.androidx-startup"
             android:exported="false"
             tools:node="merge">
+
             <!-- 如果声明的Initializer含有依赖的Initializer，则依赖会和声明的Initializer一起被AppStartup发现，无需额外声明依赖的Initializer -->
             <meta-data
                 android:name="com.example.androiddemo.jetpack.startup.InitializerC"
@@ -171,4 +178,5 @@
                 tools:node="remove" />
         </provider>
     </application>
+
 </manifest>

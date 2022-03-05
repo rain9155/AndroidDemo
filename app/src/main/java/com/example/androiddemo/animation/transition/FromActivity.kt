@@ -12,7 +12,7 @@ import android.view.Window
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_from.*
+import com.example.androiddemo.databinding.ActivityFromBinding
 
 /**
  * 一、实现Activity转场动画的方式1（Android5.0后才出现）:
@@ -83,12 +83,15 @@ import kotlinx.android.synthetic.main.activity_from.*
 */
 class FromActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityFromBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
         }
-        setContentView(R.layout.activity_from)
+        binding = ActivityFromBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
     /**
@@ -138,8 +141,8 @@ class FromActivity : AppCompatActivity() {
 //            "element1").toBundle()
 //        )
         //共享多个元素
-        val element1: View = share_element1 //使用共享，必须为View
-        val element2: View = share_element2
+        val element1: View = binding.shareElement1 //使用共享，必须为View
+        val element2: View = binding.shareElement2
         startActivity(
             intent,
             ActivityOptions.makeSceneTransitionAnimation(

@@ -13,7 +13,7 @@ import com.example.androiddemo.animation.animation.AnimationActivity
 import com.example.androiddemo.animation.animator.*
 import com.example.androiddemo.animation.layoutanim.LayoutAnimationActivity
 import com.example.androiddemo.animation.layoutanim.LayoutTransitionActivity
-import kotlinx.android.synthetic.main.activity_anim.*
+import com.example.androiddemo.databinding.ActivityAnimBinding
 
 /**
  * 各种动画使用示例：
@@ -22,57 +22,58 @@ class AnimActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_anim)
+        val binding = ActivityAnimBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        cp_to_animation1.setOnClickListener {
+        binding.cpToAnimationXml.setOnClickListener {
             startActivity(Intent(this, AnimationXmlActivity::class.java))
         }
 
-        cp_to_animation2.setOnClickListener {
+        binding.cpToAnimation.setOnClickListener {
             startActivity(Intent(this, AnimationActivity::class.java))
         }
 
-        cp_to_value_animator.setOnClickListener {
+        binding.cpToValueAnimator.setOnClickListener {
             startActivity(Intent(this, ValueAnimatorActivity::class.java))
         }
 
-        cp_to_object_animator.setOnClickListener {
+        binding.cpToObjectAnimator.setOnClickListener {
             startActivity(Intent(this, ObjectAnimatorActivity::class.java))
         }
 
-        cp_to_values_holder.setOnClickListener {
+        binding.cpToValuesHolder.setOnClickListener {
             startActivity(Intent(this, ValuesHolderActivity::class.java))
         }
 
-        cp_to_set_animator.setOnClickListener {
+        binding.cpToSetAnimator.setOnClickListener {
             startActivity(Intent(this, AnimatorSetActivity::class.java))
         }
 
-        cp_to_xml_animator.setOnClickListener {
+        binding.cpToXmlAnimator.setOnClickListener {
             startActivity(Intent(this, XmlAnimatorActivity::class.java))
         }
 
-        cp_to_layout_animation.setOnClickListener {
+        binding.cpToLayoutAnimation.setOnClickListener {
             startActivity(Intent(this, LayoutAnimationActivity::class.java))
         }
 
-        cp_to_transition_animation.setOnClickListener {
+        binding.cpToLayoutTransition.setOnClickListener {
             startActivity(Intent(this, LayoutTransitionActivity::class.java))
         }
 
-        cp_to_reveal_animation.setOnClickListener{
+        binding.cpToRevealAnimation.setOnClickListener{
             startActivity(Intent(this, RevealActivity::class.java))
         }
 
-        cp_to_ripple_animation.setOnClickListener {
+        binding.cpToRippleAnimation.setOnClickListener {
             startActivity(Intent(this, RippleActivity::class.java))
         }
 
-        cp_to_state_animation.setOnClickListener {
+        binding.cpToStateAnimation.setOnClickListener {
             startActivity(Intent(this, StateActivity::class.java))
         }
 
-        cp_to_activity_transition.setOnClickListener {
+        binding.cpToActivityTransition.setOnClickListener {
             startActivity(Intent(this, FromActivity::class.java))
         }
     }

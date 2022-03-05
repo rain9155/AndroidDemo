@@ -44,6 +44,7 @@
     <string name="title_activity_drag">DragActivity</string>
     <string name="title_activity_media">MediaActivity</string>
     <string name="title_activity_audio">AudioActivity</string>
+    <string name="title_activity_video">VideoActivity</string>
     <string name="scale">Scale</string>
     <string name="alpha">Alpha</string>
     <string name="rotate">Rotate</string>
@@ -57,7 +58,7 @@
     <string name="video_learn">视频学习</string>
     <string name="openGL_learn">OpenGL ES学习</string>
     <string name="short_text">Hello World</string>
-    <string name="large_text">AppBarLayout
+    <string name="large_text" formatted="false">AppBarLayout
 AppBarLayout是一个实现了很多材料设计特性的垂直的LinearLayout，它能响应滑动事件。
         必须在它的子view上设置app:layout_scrollFlags属性或者是在代码中调用setScrollFlags()设置这个属性。
         这个类的特性强烈依赖于它是否是一个CoordinatorLayout的直接子view，如果不是，那么它的很多特性不能够使用。

@@ -6,7 +6,7 @@ import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_color_matrix_api.*
+import com.example.androiddemo.databinding.ActivityColorMatrixApiBinding
 
 /**
  * ColorMatrix颜色矩阵：
@@ -44,22 +44,26 @@ class ColorMatrixApiActivity : AppCompatActivity(), OnSeekBarChangeListener {
     }
 
     //图片的色调
-    var hue = 50f
+    private var hue = 50f
     //图片的饱和度
-    var saturation = 50f
+    private var saturation = 50f
     //图片的亮度
-    var lum = 50f
+    private var lum = 50f
     //需要被处理的图片
-    val bitmap by lazy {
+    private val bitmap by lazy {
         BitmapFactory.decodeResource(resources, R.drawable.girl)
     }
 
+    private lateinit var binding: ActivityColorMatrixApiBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_color_matrix_api)
-        sb_hue.setOnSeekBarChangeListener(this)
-        sb_saturation.setOnSeekBarChangeListener(this)
-        sb_lum.setOnSeekBarChangeListener(this)
+        binding = ActivityColorMatrixApiBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.sbHue.setOnSeekBarChangeListener(this)
+        binding.sbLum.setOnSeekBarChangeListener(this)
+        binding.sbSaturation.setOnSeekBarChangeListener(this)
     }
 
     /** 按住seekbar时的事件监听处理   */
@@ -73,21 +77,21 @@ class ColorMatrixApiActivity : AppCompatActivity(), OnSeekBarChangeListener {
         when (seekBar.id) {
             R.id.sb_hue -> {
                 hue = (progress - MID_VALUE) * 1.0f / MID_VALUE * 180
-                tv_hue.text = "色调：$progress%"
+                binding.tvHue.text = "色调：$progress%"
             }
             R.id.sb_saturation -> {
                 saturation = progress * 1.0f / MID_VALUE
-                tv_saturation.text = "饱和度：$progress%"
+                binding.tvSaturation.text = "饱和度：$progress%"
             }
             R.id.sb_lum -> {
                 lum = progress * 1.0f / MID_VALUE
-                tv_lum.text = "亮度：$progress%"
+                binding.tvLum.text = "亮度：$progress%"
             }
             else -> {
             }
         }
         val handledBitmap = handleBitmap(bitmap, hue, saturation, lum)
-        iv_girl.setImageBitmap(handledBitmap)
+        binding.ivGirl.setImageBitmap(handledBitmap)
     }
 
     /**

@@ -4,10 +4,11 @@ import android.animation.Keyframe
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_holder_animator.*
+import com.example.androiddemo.databinding.ActivityHolderAnimatorBinding
 
 /**
  * 属性动画之PropertyValuesHolder --- 不需要使用AnimatorSet，也能实现多个动画同时播放：
@@ -59,14 +60,15 @@ class ValuesHolderActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_holder_animator)
+        val binding = ActivityHolderAnimatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //启动PropertyValuesHolder动画
-        btn_start.setOnClickListener {
-            doAnimator()
+        binding.btnStart.setOnClickListener {
+            doAnimator(binding.textView)
         }
 
-        text_view.setOnClickListener {
+        binding.textView.setOnClickListener {
             Toast.makeText(
                 this@ValuesHolderActivity,
                 "Hello!",
@@ -75,22 +77,22 @@ class ValuesHolderActivity : AppCompatActivity() {
         }
 
         //启动KeyFrame动画
-        btn_start_keyFame.setOnClickListener {
-            doAnimator2()
+        binding.btnStartKeyFame.setOnClickListener {
+            doAnimator2(binding.imageView)
         }
     }
 
     /**
      * PropertyValuesHolder使用
      */
-    private fun doAnimator() {
+    private fun doAnimator(textView: TextView) {
         /* 1、创建PropertyValuesHolder实例，封装一个或多个动画属性 */
         val pvh1 = PropertyValuesHolder.ofFloat("rotation", 60f, -60f, 40f, -40f, -20f, 20f, 10f, -10f, 0f)
         val pvh2 = PropertyValuesHolder.ofInt("BackgroundColor", -0x1, -0xff01, -0x100, -0x1, 0x00000000, -0xff01)
         val pvh3 = PropertyValuesHolder.ofFloat("scaleX", 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f, 1f)
 
         /* 2、使用ObjectAnimator的ofPropertyValuesHolder构造，把刚创建的PropertyValuesHolder实例传进去 */
-        objectAnimator = ObjectAnimator.ofPropertyValuesHolder(text_view, pvh1, pvh2, pvh3)
+        objectAnimator = ObjectAnimator.ofPropertyValuesHolder(textView, pvh1, pvh2, pvh3)
 
         /* 3、设置动画相关 */
         objectAnimator?.duration = 1000
@@ -103,7 +105,7 @@ class ValuesHolderActivity : AppCompatActivity() {
     /**
      * Keyframe使用
      */
-    private fun doAnimator2() {
+    private fun doAnimator2(imageView: ImageView) {
         /* 1、生成Keyframe对象 */
         /**
          * 注意：
@@ -156,7 +158,7 @@ class ValuesHolderActivity : AppCompatActivity() {
             f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10)
 
         /* 3、ObjectAnimator.ofPropertyValuesHolder()生成对应的Animator */
-        objectAnimator = ObjectAnimator.ofPropertyValuesHolder(image_view, pvh1, phv2)
+        objectAnimator = ObjectAnimator.ofPropertyValuesHolder(imageView, pvh1, phv2)
         objectAnimator?.duration = 1000
         objectAnimator?.start()
     }

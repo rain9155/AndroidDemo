@@ -15,8 +15,6 @@ import com.example.androiddemo.jetpack.mvvm.model.DataRepository
 import com.example.androiddemo.jetpack.mvvm.viewModel.MvvmViewModel
 import com.example.androiddemo.jetpack.mvvm.viewModel.MvvmViewModelFactory
 
-import kotlinx.android.synthetic.main.activity_mvvm.*
-
 class MvvmActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MvvmViewModel
@@ -34,40 +32,40 @@ class MvvmActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         //视图初始化
-        recycler_view.run {
-            recycler_view.layoutManager = LinearLayoutManager(this@MvvmActivity)
+        binding.recyclerView.run {
+            binding.recyclerView.layoutManager = LinearLayoutManager(this@MvvmActivity)
             imageListAdapter = ImageListAdapter()
-            recycler_view.adapter = imageListAdapter
+            binding.recyclerView.adapter = imageListAdapter
         }
 
         //观察ViewModel中的数据更新
         viewModel.loadState.observe(this, Observer {
             when(it){
                 is LoadState.Loading -> {
-                    progress_bar.visibility = View.VISIBLE
-                    recycler_view.visibility = View.INVISIBLE
-                    fab.isEnabled = false
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.INVISIBLE
+                    binding.fab.isEnabled = false
                 }
                 is LoadState.Success -> {
-                    progress_bar.visibility = View.INVISIBLE
-                    recycler_view.visibility = View.VISIBLE
-                    fab.isEnabled = true
-                    Snackbar.make(progress_bar, "loading success", Snackbar.LENGTH_LONG)
+                    binding.progressBar.visibility = View.INVISIBLE
+                    binding.recyclerView.visibility = View.VISIBLE
+                    binding.fab.isEnabled = true
+                    Snackbar.make(binding.progressBar, "loading success", Snackbar.LENGTH_LONG)
                         .setAction("confirm", null)
                         .show()
                 }
                 is LoadState.Fail -> {
-                    progress_bar.visibility = View.INVISIBLE
-                    fab.isEnabled = true
-                    Snackbar.make(progress_bar, "loading fail, msg = ${it.msg}", Snackbar.LENGTH_LONG)
+                    binding.progressBar.visibility = View.INVISIBLE
+                    binding.fab.isEnabled = true
+                    Snackbar.make(binding.progressBar, "loading fail, msg = ${it.msg}", Snackbar.LENGTH_LONG)
                         .setAction("confirm", null)
                         .show()
                 }
             }
         })
-        viewModel.imageList.observe(this, Observer {
+        viewModel.imageList.observe(this) {
             imageListAdapter.datas = it
-        })
+        }
 
         viewModel.getImages()
     }

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_color_matrix.*
+import com.example.androiddemo.databinding.ActivityColorMatrixBinding
 
 /**
  * 参考：https://blog.csdn.net/harvic880925/article/details/51187277
@@ -33,46 +33,49 @@ class ColorMatrixActivity : AppCompatActivity() {
     }
 
     //用一维数组保存颜色矩阵的20个矩阵值
-    var values= floatArrayOf(
+    private var values= floatArrayOf(
         1f, 0f, 0f, 0f, 0f,
         0f, 1f, 0f, 0f, 0f,
         0f, 0f, 1f, 0f, 0f,
         0f, 0f, 0f, 1f, 0f
     )
     //颜色矩阵
-    var colorMatrix = ColorMatrix(values)
+    private var colorMatrix = ColorMatrix(values)
     //用20个EditText保存输入的20个矩阵值
-    var editTexts = ArrayList<EditText>(COUNT)
+    private var editTexts = ArrayList<EditText>(COUNT)
     //需要通过颜色矩阵改变颜色的图片
-    val bitmap by lazy {
+    private val bitmap by lazy {
         BitmapFactory.decodeResource(resources, R.drawable.girl)
     }
-    var etWidth = 0
-    var etHeight = 0
+    private var etWidth = 0
+    private var etHeight = 0
+
+    private lateinit var binding: ActivityColorMatrixBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_color_matrix)
+        binding = ActivityColorMatrixBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //初始化图片
-        iv_girl.setImageBitmap(bitmap)
+        binding.ivGirl.setImageBitmap(bitmap)
 
         //初始化矩阵
-        grid_layout.post {
-            etWidth = grid_layout.width / 5
-            etHeight = grid_layout.height / 4
+        binding.ivGirl.post {
+            etWidth = binding.gridLayout.width / 5
+            etHeight = binding.gridLayout.height / 4
             initGridLayout()
             initEditTexts()
         }
 
         //把颜色矩阵作用到图片
-        btn_change.setOnClickListener {
+        binding.btnChange.setOnClickListener {
             updateColorMatrix()
             setImageColorMatrix()
         }
 
         //重置矩阵为初始状态
-        btn_reset.setOnClickListener {
+        binding.btnReset.setOnClickListener {
             resetColorMatrix()
             setImageColorMatrix()
         }
@@ -86,7 +89,7 @@ class ColorMatrixActivity : AppCompatActivity() {
         for (i in 0..19) {
             val editText = EditText(this@ColorMatrixActivity)
             editTexts.add(editText)
-            grid_layout.addView(editText, etWidth, etHeight)
+            binding.gridLayout.addView(editText, etWidth, etHeight)
         }
     }
 
@@ -133,7 +136,7 @@ class ColorMatrixActivity : AppCompatActivity() {
         paint.colorFilter = ColorMatrixColorFilter(colorMatrix)
         //把原图重新绘制
         canvas.drawBitmap(bitmap, 0f, 0f, paint)
-        iv_girl.setImageBitmap(newBitmap)
+        binding.ivGirl.setImageBitmap(newBitmap)
     }
 
 }

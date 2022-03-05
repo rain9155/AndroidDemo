@@ -17,12 +17,10 @@ class MvvmViewModel(private val dataRepository: DataRepository) : ViewModel(){
     }
 
     private var curPage = 1
-
     //存放图片的列表
     var imageList = MutableLiveData<List<String>>()
     //加载状态
     var loadState = MutableLiveData<LoadState>()
-
 
     fun getImages(){
         launch({

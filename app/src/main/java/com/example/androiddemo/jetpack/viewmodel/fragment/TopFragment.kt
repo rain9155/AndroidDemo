@@ -10,8 +10,8 @@ import android.widget.SeekBar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.androiddemo.R
+import com.example.androiddemo.databinding.FragmentTopBinding
 import com.example.androiddemo.jetpack.viewmodel.SharedViewModel
-import kotlinx.android.synthetic.main.fragment_top.*
 
 class TopFragment : Fragment() {
 
@@ -20,10 +20,11 @@ class TopFragment : Fragment() {
     }
 
     private lateinit var viewModel: SharedViewModel
+    private lateinit var binding: FragmentTopBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_top, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentTopBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -35,10 +36,10 @@ class TopFragment : Fragment() {
 
         /** 观察进度变化 */
         viewModel.getProcess().observe(viewLifecycleOwner, Observer {
-            seek_bar.progress = it
+            binding.seekBar.progress = it
         })
 
-        seek_bar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        binding.seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
 
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 /** 更新进度变化 */

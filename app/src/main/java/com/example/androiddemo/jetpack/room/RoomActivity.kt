@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androiddemo.R
+import com.example.androiddemo.databinding.ActivityRoomBinding
 import com.example.androiddemo.jetpack.room.model.AppDatabase
 import com.example.androiddemo.jetpack.room.model.entity.UserEntity
-import kotlinx.android.synthetic.main.activity_room.*
 
 /**
  * 参考：https://developer.android.com/training/data-storage/room
@@ -36,13 +36,14 @@ class RoomActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_room)
+        val binding = ActivityRoomBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val userList = ArrayList<UserEntity>()
         val datasAdapter = DatasAdapter(userList)
 
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = datasAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = datasAdapter
 
         //初始化数据库
         val appDatabase = AppDatabase.getInstance(this.applicationContext)
@@ -53,7 +54,7 @@ class RoomActivity : AppCompatActivity() {
             if(it.isNotEmpty()){
                 userList.addAll(it)
                 datasAdapter.notifyDataSetChanged()
-                progress_bar.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
             }
         })
     }

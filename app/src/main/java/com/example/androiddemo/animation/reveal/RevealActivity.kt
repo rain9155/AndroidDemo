@@ -7,8 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewAnimationUtils
 import androidx.annotation.RequiresApi
-import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_reveal.*
+import com.example.androiddemo.databinding.ActivityRevealBinding
 import kotlin.math.hypot
 
 /**
@@ -25,43 +24,45 @@ import kotlin.math.hypot
  */
 class RevealActivity : AppCompatActivity() {
 
-    var isReveal : Boolean = false //要揭露的View是否揭露了
+    private var isReveal : Boolean = false //要揭露的View是否揭露了
+
+    private lateinit var binding: ActivityRevealBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reveal)
+        binding = ActivityRevealBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        floating_button.setOnClickListener{
+        binding.floatingButton.setOnClickListener{
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 launchRevealAnimation()
             }
         }
-        tool_bar.setNavigationOnClickListener{
+        binding.toolBar.setNavigationOnClickListener{
             finish()
         }
 
-        isReveal = iv_reveal.visibility == View.VISIBLE;
+        isReveal = binding.ivReveal.visibility == View.VISIBLE
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun launchRevealAnimation() {
-        val animation = iv_reveal.animation;
+        val animation = binding.ivReveal.animation
         if(animation != null){
            return
         }
 
         val location = IntArray(2)
-        floating_button.getLocationInWindow(location)
+        binding.floatingButton.getLocationInWindow(location)
 
         //求出扩散圆的中心坐标
-        val x = location[0] + floating_button.width / 2
-        val y = location[1] + floating_button.height / 2
+        val x = location[0] + binding.floatingButton.width / 2
+        val y = location[1] + binding.floatingButton.height / 2
         //求出要揭露 View 的对角线，来作为扩散圆的最大半径
-        val radius = hypot(iv_girl.width.toDouble(), iv_girl.height.toDouble()).toFloat()
+        val radius = hypot(binding.ivGirl.width.toDouble(), binding.ivGirl.height.toDouble()).toFloat()
 
         if(isReveal){//已经揭露了，隐藏View
-
-            val revealAnimator = ViewAnimationUtils.createCircularReveal(iv_reveal, x, y, radius, 0f)
+            val revealAnimator = ViewAnimationUtils.createCircularReveal(binding.ivReveal, x, y, radius, 0f)
             revealAnimator.run {
                 duration = 800
                 addListener(object : Animator.AnimatorListener {
@@ -69,7 +70,7 @@ class RevealActivity : AppCompatActivity() {
                     }
 
                     override fun onAnimationEnd(animation: Animator?) {
-                        iv_reveal.visibility = View.GONE
+                        binding.ivReveal.visibility = View.GONE
                         revealAnimator.removeListener(this);                    }
 
                     override fun onAnimationCancel(animation: Animator?) {
@@ -81,12 +82,9 @@ class RevealActivity : AppCompatActivity() {
                 })
                 start()
             }
-
             isReveal = false
-
         }else {//没有揭露，显示View
-
-            val revealAnimator = ViewAnimationUtils.createCircularReveal(iv_reveal, x, y, 0f, radius)
+            val revealAnimator = ViewAnimationUtils.createCircularReveal(binding.ivReveal, x, y, 0f, radius)
             revealAnimator.run {
                 duration = 800
                 addListener(object : Animator.AnimatorListener {
@@ -100,13 +98,12 @@ class RevealActivity : AppCompatActivity() {
                     }
 
                     override fun onAnimationStart(animation: Animator?) {
-                        iv_reveal.visibility = View.VISIBLE
+                        binding.ivReveal.visibility = View.VISIBLE
                     }
 
                 })
                 start()
             }
-
             isReveal = true
         }
     }

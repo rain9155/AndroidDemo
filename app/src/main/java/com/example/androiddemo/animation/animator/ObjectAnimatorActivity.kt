@@ -4,11 +4,12 @@ import android.animation.ObjectAnimator
 import android.animation.TypeEvaluator
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androiddemo.R
+import com.example.androiddemo.animation.animator.view.OfObjectObjectAnimatorView
 import com.example.androiddemo.animation.animator.view.Point
-import kotlinx.android.synthetic.main.activity_object_animator.*
+import com.example.androiddemo.databinding.ActivityObjectAnimatorBinding
 
 /**
  * 属性动画之ObjectAnimator --- 继承于ValueAnimator:
@@ -53,14 +54,15 @@ class ObjectAnimatorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_object_animator)
+        val binding = ActivityObjectAnimatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //启动ObjectAnimator动画
-        btn_start_object1.setOnClickListener {
-            doAnimator()
+        binding.btnStartObject1.setOnClickListener {
+            doAnimator(binding.textView)
         }
 
-        text_view.setOnClickListener {
+        binding.textView.setOnClickListener {
             Toast.makeText(
                 this@ObjectAnimatorActivity,
                 "Hello!",
@@ -68,17 +70,17 @@ class ObjectAnimatorActivity : AppCompatActivity() {
             ).show()
         }
 
-        btn_start_object2.setOnClickListener {
-            do2Animator()
+        binding.btnStartObject2.setOnClickListener {
+            do2Animator(binding.ofObjectView)
         }
     }
 
     /**
      * 启动ObjectAnimator动画
      */
-    private fun doAnimator() {
+    private fun doAnimator(textView: TextView) {
         /* 1、通过ObjectAnimator的静态工厂方法，创建一个ObjectAnimator对象  */
-        objectAnimator = ObjectAnimator.ofFloat(text_view, "rotationX", 0f, 360f)
+        objectAnimator = ObjectAnimator.ofFloat(textView, "rotationX", 0f, 360f)
 
         /* 2、设置一些动画属性 */
         objectAnimator?.duration = 2000
@@ -90,9 +92,9 @@ class ObjectAnimatorActivity : AppCompatActivity() {
     /**
      * ObjectAnimator.ofObject方法使用
      */
-    private fun do2Animator() {
+    private fun do2Animator(objectView: OfObjectObjectAnimatorView) {
         objectAnimator = ObjectAnimator.ofObject(
-            of_object_view,
+            objectView,
             "point",
             MyEvaluator(),
             Point(100f),

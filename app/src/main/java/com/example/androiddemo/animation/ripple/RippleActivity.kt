@@ -4,7 +4,7 @@ import android.content.res.TypedArray
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_ripple.*
+import com.example.androiddemo.databinding.ActivityRippleBinding
 
 /**
  * Ripple动画效果:
@@ -17,13 +17,14 @@ class RippleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ripple)
+        val binding = ActivityRippleBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //通过代码来给TextView设置ripple效果（有界）
         val attrs = intArrayOf(R.attr.selectableItemBackground)
         val typedArray: TypedArray = obtainStyledAttributes(attrs)
         val backgroundResource = typedArray.getResourceId(0, 0)
-        tv_puppet1.setBackgroundResource(backgroundResource)
+        binding.tvPuppet1.setBackgroundResource(backgroundResource)
         typedArray.recycle()
     }
 }

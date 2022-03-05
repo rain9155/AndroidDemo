@@ -16,13 +16,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_color_matrix1"
+            android:id="@+id/cp_to_color_matrix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ColorMatrix矩阵使用"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_color_matrix2"
+            android:id="@+id/cp_to_color_matrix_api"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ColorMatrix相关函数使用"/>

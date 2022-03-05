@@ -11,13 +11,13 @@ import com.example.androiddemo.R
  */
 
 //单个属性
-@BindingAdapter(value = ["bind:hideIfZero"])
+@BindingAdapter(value = ["hideIfZero"])
 fun hideIfZero(view: View, count: Int){
     view.visibility = if(count == 0) View.INVISIBLE else View.VISIBLE
 }
 
 //多个属性，requireAll为true表示所有属性都要定义在xml中
-@BindingAdapter(value = ["bind:max", "bind:changeColor"], requireAll = true)
+@BindingAdapter(value = ["max", "changeColor"], requireAll = true)
 fun TextView.changeColor(max: Int, count: Int){
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         if(count >= max){

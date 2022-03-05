@@ -2,9 +2,10 @@ package com.example.androiddemo.animation.layoutanim
 
 import android.os.Bundle
 import android.view.animation.*
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_layout_animation.*
+import com.example.androiddemo.databinding.ActivityLayoutAnimationBinding
 
 /**
  * Android布局动画之LayoutAnimation:
@@ -43,15 +44,16 @@ class LayoutAnimationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_layout_animation)
+        val binding = ActivityLayoutAnimationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        doLayoutAnimation()
+        doLayoutAnimation(binding.llItems1)
     }
 
     /**
      * LayoutAnimation代码实现, LayoutAnimationController的使用
      */
-    private fun doLayoutAnimation(){
+    private fun doLayoutAnimation(linearLayout: LinearLayout){
         /* 1、定义一个控件动画, 通过Xml定义 或 代码定义动画 */
         val animation = AnimationUtils.loadAnimation(this,R.anim.anim_set)
 
@@ -63,6 +65,6 @@ class LayoutAnimationActivity : AppCompatActivity() {
         layoutAnimationController.order = LayoutAnimationController.ORDER_NORMAL
 
         /* 4、用ViewGroup中的setLayoutAnimation（）为ViewGroup设置LayoutAnimationController属性 */
-        ll_items1.layoutAnimation = layoutAnimationController
+        linearLayout.layoutAnimation = layoutAnimationController
     }
 }

@@ -5,9 +5,9 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_set_animator.*
+import com.example.androiddemo.databinding.ActivitySetAnimatorBinding
 
 /**
  * 属性动画之AnimatorSet（联合动画）
@@ -68,32 +68,33 @@ class AnimatorSetActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_set_animator)
+        val binding = ActivitySetAnimatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btn_start_set1.setOnClickListener {
-            doPlayTogetherAnim()
+        binding.btnStartSet1.setOnClickListener {
+            doPlayTogetherAnim(binding.text1)
         }
 
-        btn_start_set2.setOnClickListener {
-            doPlaySequentiallyAnim()
+        binding.btnStartSet2.setOnClickListener {
+            doPlaySequentiallyAnim(binding.text2)
         }
 
-        btn_start_set3.setOnClickListener {
-            doBudilderAnim()
+        binding.btnStartSet3.setOnClickListener {
+            doBudilderAnim(binding.text3)
         }
     }
 
     /**
      * playTogether函数的使用
      */
-    private fun doPlayTogetherAnim() {
+    private fun doPlayTogetherAnim(textView: TextView) {
         /* 1、创建一个AnimatorSet */
         animatorSet = AnimatorSet()
 
         /* 2、构建一个或多个属性动画 */
-        val tv1TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(text_1, "translationY", 0f, 400f, 0f)
-        val tv2TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(text_1, "translationY", 0f, 400f, 0f)
-        val tv2Rotation: ObjectAnimator = ObjectAnimator.ofFloat(text_1, "rotation", 0f, 360f, 0f)
+        val tv1TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(textView, "translationY", 0f, 400f, 0f)
+        val tv2TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(textView, "translationY", 0f, 400f, 0f)
+        val tv2Rotation: ObjectAnimator = ObjectAnimator.ofFloat(textView, "rotation", 0f, 360f, 0f)
 
         /* 3、使用playTogether */
         animatorSet!!.playTogether(tv1TranslateY, tv2Rotation, tv2TranslateY)
@@ -106,14 +107,14 @@ class AnimatorSetActivity : AppCompatActivity() {
     /**
      * playSequentially函数实用实例
      */
-    private fun doPlaySequentiallyAnim() {
+    private fun doPlaySequentiallyAnim(textView: TextView) {
         /* 1、创建一个AnimatorSet */
         animatorSet = AnimatorSet()
 
         /* 2、构建一个或多个属性动画 */
-        val tv1TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(text_2, "translationY", 0f, 400f, 0f)
-        val tv2TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(text_2, "translationY", 0f, 400f, 0f)
-        val tv2Rotation: ObjectAnimator = ObjectAnimator.ofFloat(text_2, "rotation", 0f, 360f, 0f)
+        val tv1TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(textView, "translationY", 0f, 400f, 0f)
+        val tv2TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(textView, "translationY", 0f, 400f, 0f)
+        val tv2Rotation: ObjectAnimator = ObjectAnimator.ofFloat(textView, "rotation", 0f, 360f, 0f)
 
         /* 3、使用playSequentially */
         animatorSet!!.playSequentially(tv1TranslateY, tv2Rotation, tv2TranslateY)
@@ -126,7 +127,7 @@ class AnimatorSetActivity : AppCompatActivity() {
      * AnimatorSet.Builder
      * AnimatorSet中play(),with(), before(),after()的使用
      */
-    private fun doBudilderAnim() {
+    private fun doBudilderAnim(textView: TextView) {
         /* 1、创建一个AnimatorSet */
         animatorSet = AnimatorSet()
         animatorSet!!.addListener(object : Animator.AnimatorListener {
@@ -152,9 +153,9 @@ class AnimatorSetActivity : AppCompatActivity() {
         })
 
         /* 2、构建一个或多个属性动画 */
-        val tv1TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(text_3, "translationY", 0f, 400f, 0f)
-        val tv2TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(text_3, "translationY", 0f, 400f, 0f)
-        val tv2Rotation: ObjectAnimator = ObjectAnimator.ofFloat(text_3, "rotation", 0f, 360f, 0f)
+        val tv1TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(textView, "translationY", 0f, 400f, 0f)
+        val tv2TranslateY: ObjectAnimator = ObjectAnimator.ofFloat(textView, "translationY", 0f, 400f, 0f)
+        val tv2Rotation: ObjectAnimator = ObjectAnimator.ofFloat(textView, "rotation", 0f, 360f, 0f)
 
         /* 3、使用 */
         //方式一：使用builder对象逐个添加动画

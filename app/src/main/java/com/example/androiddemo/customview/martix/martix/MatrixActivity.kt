@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_matrix.*
+import com.example.androiddemo.databinding.ActivityMatrixBinding
 
 /**
  * 参考：https://www.gcssloop.com/customview/Matrix_Basic， https://www.gcssloop.com/customview/Matrix_Method
@@ -43,45 +43,48 @@ class MatrixActivity : AppCompatActivity() {
     }
 
     //用一个一维数组保存变形矩阵的9个矩阵值
-    var values = floatArrayOf(
+    private var values = floatArrayOf(
         1f, 0f, 0f,
         0f, 1f, 0f,
         0f, 0f, 1f
     )
     //变形矩阵
-    var matrix = Matrix()
+    private var matrix = Matrix()
     //用9个EditText保存输入的9个矩阵值
-    var editTexts: Array<EditText?> = arrayOfNulls(COUNT)
+    private var editTexts: Array<EditText?> = arrayOfNulls(COUNT)
     //需要通过变形矩阵改变现状大小的图片
-    val bitmap  by lazy {
+    private val bitmap  by lazy {
         BitmapFactory.decodeResource(resources, R.drawable.girl)
     }
-    var etWidth = 0
-    var etHeight = 0
+    private var etWidth = 0
+    private var etHeight = 0
+
+    private lateinit var binding: ActivityMatrixBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_matrix)
+        binding = ActivityMatrixBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //初始化图片
-        iv_launcher.setImageBitmap(bitmap)
+        binding.ivLauncher.setImageBitmap(bitmap)
 
         //初始化矩阵
-        grid_layout.post {
-            etWidth = grid_layout.getWidth() / 3
-            etHeight = grid_layout.getHeight() / 3
+        binding.gridLayout.post {
+            etWidth = binding.gridLayout.width / 3
+            etHeight = binding.gridLayout.height / 3
             initGridLayout()
             initEditTexts()
         }
 
         //把变形矩阵作用到图片
-        btn_change.setOnClickListener {
+        binding.btnChange.setOnClickListener {
             updateMatrix()
             setImageMatrix()
         }
 
         //重置矩阵为初始状态
-        btn_reset.setOnClickListener {
+        binding.btnReset.setOnClickListener {
             resetMatrix()
             setImageMatrix()
         }
@@ -95,7 +98,7 @@ class MatrixActivity : AppCompatActivity() {
         for (i in 0..8) {
             val editText = EditText(this@MatrixActivity)
             editTexts[i] = editText
-            grid_layout.addView(editText, etWidth, etHeight)
+            binding.gridLayout.addView(editText, etWidth, etHeight)
         }
     }
 
@@ -140,7 +143,7 @@ class MatrixActivity : AppCompatActivity() {
         val canvas = Canvas(newBitmap)
         //将原图以这个变形矩阵的形式重新绘制
         canvas.drawBitmap(bitmap, matrix,  Paint())
-        iv_launcher.setImageBitmap(newBitmap)
+        binding.ivLauncher.setImageBitmap(newBitmap)
     }
 
 }

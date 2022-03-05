@@ -13,8 +13,9 @@ import com.example.androiddemo.databinding.ActivityBindingBinding
  * https://www.jianshu.com/p/e3b881d80c6d
  *
  * 数据绑定DataBinding：
- * DataBinding库可以把数据源直接绑定到视图中，每当数据更新时，视图能自动更新，从而避免我们手动更新视图的操作
- * 所以使用DataBinding可以减少的Activity/Fragment代码量，通过DataBinding可以更容易的实现MVVM
+ * DataBinding可以把数据源直接绑定到视图中，每当数据更新时，视图能自动更新，从而避免我们手动更新视图的操作, 所以通过使用
+ * DataBinding可以更容易的实现MVVM，同時使用DataBinding可以自动绑定视图的控件引用，实现ViewBinding功能从而避免findByView
+ * 方法的调用，所以使用DataBinding可以减少Activity/Fragment的代码量，减少模板代码.
  *
  * 组成：
  * <layout><layout>: 里面包含<data><data> + 视图的根布局，其中<data>标签中可以通过<variable>标签定义变量

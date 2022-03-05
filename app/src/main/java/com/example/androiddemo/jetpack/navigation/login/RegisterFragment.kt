@@ -8,23 +8,21 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
 import com.example.androiddemo.R
+import com.example.androiddemo.databinding.FragmentRegisterBinding
 import com.example.androiddemo.jetpack.navigation.isLogin
-import kotlinx.android.synthetic.main.fragment_register.*
 
 class RegisterFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+    private lateinit var binding: FragmentRegisterBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        btn_register_login.setOnClickListener {
+        binding.btnRegisterLogin.setOnClickListener {
             isLogin = true
             //findNavController().navigate(R.id.action_nav_login_to_peopleFragment)
             //回退到people_fragment

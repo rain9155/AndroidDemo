@@ -9,31 +9,32 @@ import com.example.androiddemo.customview.martix.BitmapActivity
 import com.example.androiddemo.customview.patheffect.PathEffectActivity
 import com.example.androiddemo.customview.shader.ShaderActivity
 import com.example.androiddemo.customview.xfermode.XfermodeActivity
-import kotlinx.android.synthetic.main.activity_custom_view.*
+import com.example.androiddemo.databinding.ActivityCustomViewBinding
 
 class CustomViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_custom_view)
+        val binding = ActivityCustomViewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        cp_to_canvas.setOnClickListener {
+        binding.cpToCanvas.setOnClickListener {
             startActivity(Intent(this, CanvasActivity::class.java))
         }
 
-        cp_to_patheffect.setOnClickListener {
+        binding.cpToPatheffect.setOnClickListener {
             startActivity(Intent(this, PathEffectActivity::class.java))
         }
 
-        cp_to_shader.setOnClickListener {
+        binding.cpToShader.setOnClickListener {
             startActivity(Intent(this, ShaderActivity::class.java))
         }
 
-        cp_to_xfermode.setOnClickListener {
+        binding.cpToXfermode.setOnClickListener {
             startActivity(Intent(this, XfermodeActivity::class.java))
         }
 
-        cp_to_matrix.setOnClickListener {
+        binding.cpToMatrix.setOnClickListener {
             startActivity(Intent(this, BitmapActivity::class.java))
         }
 

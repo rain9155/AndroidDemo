@@ -12,7 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_navigation.*
+import com.example.androiddemo.databinding.ActivityNavigationBinding
 
 var isLogin = false
 
@@ -69,46 +69,46 @@ class NavigationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_navigation)
-        setSupportActionBar(tool_bar)
+        val binding = ActivityNavigationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolBar)
 
         navController = findNavController(R.id.nav_host_fragment)
 
         //AppBarConfiguration构造传入NavGraph，表示Graph中的起始目的地作为顶级目的地
         //val appBarConfiguration = AppBarConfiguration(navController.graph)
 
+        //AppBarConfiguration构造传入一组目的地id，表示这组目的地都为顶级目的地
         val topLevelDestinationIds = setOf(
             R.id.home_fragment,
             R.id.people_fragment
         )
-        //AppBarConfiguration构造传入一组目的地id，表示这组目的地都为顶级目的地
         val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds
         )
 
         //NavigationUI与Toolbar绑定，当在NavHost中跳转时，ToolBar左上角的标题与icon也随之变化
-        tool_bar.setupWithNavController(navController, appBarConfiguration)
+        binding.toolBar.setupWithNavController(navController, appBarConfiguration)
 
         //NavigationUI与Toolbar、DrawLayout绑定, 当在NavHost中跳转时，ToolBar左上角的标题与icon也随之变化
-        tool_bar.setupWithNavController(navController, drawer_layout)
+        binding.toolBar.setupWithNavController(navController, binding.drawerLayout)
 
         //NavigationUI与DrawLayout中的NavigationView绑定，点击menuItem跳转到相应的目的地
-        nav_view.setupWithNavController(navController)
+        binding.navView.setupWithNavController(navController)
 
         //NavigationUI与BottomNavView绑定，点击tab(menuItem)跳转到相应的目的地
-        bottom_nav.setupWithNavController(navController)
+        binding.bottomNav.setupWithNavController(navController)
 
         //向NavController添加目的地更改的监听，该接口在当前目的地或其参数发生更改时调用
-        navController.addOnDestinationChangedListener{navController, destination, args ->
+        navController.addOnDestinationChangedListener{ navController, destination, _ ->
             Log.d(TAG, "addOnDestinationChangedListener(), destination = $destination， curDestination = ${navController.currentDestination}")
             if(topLevelDestinationIds.contains(destination.id)){
-                tool_bar.visibility = View.VISIBLE
-                bottom_nav.visibility = View.VISIBLE
+                binding.toolBar.visibility = View.VISIBLE
+                binding.bottomNav.visibility = View.VISIBLE
             }else{
-                tool_bar.visibility = View.GONE
-                bottom_nav.visibility = View.GONE
+                binding.toolBar.visibility = View.GONE
+                binding.bottomNav.visibility = View.GONE
             }
-
         }
 
     }

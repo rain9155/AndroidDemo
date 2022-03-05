@@ -5,7 +5,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_animation_xml.*
+import com.example.androiddemo.databinding.ActivityAnimationXmlBinding
 
 /**
  * 视图动画之alpha、scale、translate、rotate、set的xml属性及用法:
@@ -28,43 +28,43 @@ import kotlinx.android.synthetic.main.activity_animation_xml.*
  */
 class AnimationXmlActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_animation_xml)
+        val binding = ActivityAnimationXmlBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         /* 缩放动画 */
         //1、通过 AnimationUtils.loadAnimation(this, R.anim.XX_anim)从XML文件中获取动画
         val scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_scale)
-        btn_scale.setOnClickListener {
+        binding.btnScale.setOnClickListener {
             //2、利用startAnimation将动画传递给指定控件显示
-            text_view.startAnimation(scaleAnimation)
+            binding.textView.startAnimation(scaleAnimation)
         }
         /* 调节透明度动画 */
         val alphaAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_alpha)
-        btn_alpha.setOnClickListener {
-            text_view.startAnimation(alphaAnimation)
+        binding.btnAlpha.setOnClickListener {
+            binding.textView.startAnimation(alphaAnimation)
         }
 
         /* 旋转动画 */
         val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_rotate)
-        btn_rotate.setOnClickListener {
-            text_view.startAnimation(rotateAnimation)
+        binding.btnRotate.setOnClickListener {
+            binding.textView.startAnimation(rotateAnimation)
         }
 
         /* 平移动画 */
         val translateAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_translate)
-        btn_translate.setOnClickListener {
-            text_view.startAnimation(translateAnimation)
+        binding.btnTranslate.setOnClickListener {
+            binding.textView.startAnimation(translateAnimation)
         }
 
         /* 几个不同的动画定义成一个组 */
         val setAnimation = AnimationUtils.loadAnimation(this, R.anim.anim_set)
-        btn_set.setOnClickListener{
-            text_view.startAnimation(setAnimation)
+        binding.btnSet.setOnClickListener{
+            binding.textView.startAnimation(setAnimation)
         }
 
-        text_view.setOnClickListener {
+        binding.textView.setOnClickListener {
             Toast.makeText(this, "Hello!", Toast.LENGTH_SHORT)
                 .show()
         }

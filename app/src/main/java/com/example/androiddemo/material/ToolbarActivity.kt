@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_toolbar.*
+import com.example.androiddemo.databinding.ActivityToolbarBinding
 
 /**
  * Toolbar使用：
@@ -17,38 +17,34 @@ import kotlinx.android.synthetic.main.activity_toolbar.*
  */
 class ToolbarActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         //透明状态栏效果
         if (Build.VERSION.SDK_INT >= 21) {
             val decorView: View = window.decorView
-            val option =
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            val option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             decorView.systemUiVisibility = option
             window.statusBarColor = Color.TRANSPARENT
         }
-
-        setContentView(R.layout.activity_toolbar)
+        val binding = ActivityToolbarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //这个设置以后等于转成使用Actionbar的特性
-        setSupportActionBar(tool_bar)
+        setSupportActionBar(binding.toolBar)
 
         //加载菜单（toolbar做法）,如果不使用setSupportActionBar(mTooBar); 则要用以下方法加载菜单
         //mTooBar.inflateMenu(R.menu.menu_toolbar);
-
-        tool_bar.setNavigationOnClickListener{
+        binding.toolBar.setNavigationOnClickListener{
             finish()
         }
 
-        floating_button.setOnClickListener{
+        binding.floatingButton.setOnClickListener{
             val toast = Toast.makeText(this@ToolbarActivity, null, Toast.LENGTH_SHORT)
             toast.setText("hello world")
             toast.show()
         }
 
-        collapsing_toolbar_layout.title = "标题"
+        binding.collapsingToolbarLayout.title = "标题"
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

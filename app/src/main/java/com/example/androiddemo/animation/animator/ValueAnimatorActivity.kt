@@ -4,10 +4,11 @@ import android.animation.Animator
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_value_animator.*
+import com.example.androiddemo.databinding.ActivityValueAnimatorBinding
 
 /**
  * 属性动画之ValueAnimator：
@@ -52,14 +53,15 @@ class ValueAnimatorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_value_animator)
+        val binding = ActivityValueAnimatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //开始ValueAnimator动画
-        btn_start_value1.setOnClickListener {
-            doAnimator()
+        binding.btnStartValue1.setOnClickListener {
+            doAnimator(binding.textView)
         }
 
-        text_view.setOnClickListener {
+        binding.textView.setOnClickListener {
             Toast.makeText(
                 this@ValueAnimatorActivity,
                 "Hello!",
@@ -68,8 +70,8 @@ class ValueAnimatorActivity : AppCompatActivity() {
         }
 
         //ValueAnimator的ofObject方法使用
-        btn_start_value2.setOnClickListener {
-            of_object_view.doAnimator()
+        binding.btnStartValue2.setOnClickListener {
+            binding.ofObjectView.doAnimator()
         }
 
     }
@@ -77,7 +79,7 @@ class ValueAnimatorActivity : AppCompatActivity() {
     /**
      * 启动ValueAnimator动画
      */
-    private fun doAnimator() {
+    private fun doAnimator(textView: TextView) {
         /* 1、通过ValueAnimator.of方法创建实例 */
         //监听动画变化时的实时值
         valueAnimator = ValueAnimator.ofInt(0, 500, 50)
@@ -90,9 +92,9 @@ class ValueAnimatorActivity : AppCompatActivity() {
         /* 2、添加监听 */
         valueAnimator?.addUpdateListener { animation ->
             val value = animation.animatedValue as Int
-            text_view.layout(
-                text_view.left, value,
-                text_view.right, text_view.height + value
+            textView.layout(
+                textView.left, value,
+                textView.right, textView.height + value
             )
         }
         //监听动画变化时四个状态

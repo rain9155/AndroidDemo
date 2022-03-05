@@ -11,7 +11,7 @@ import com.example.androiddemo.jetpack.mvvm.model.DataRepository
  */
 class MvvmViewModelFactory(private val dataRepository: DataRepository) : ViewModelProvider.NewInstanceFactory() {
 
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         val constructor = modelClass.getConstructor(dataRepository.javaClass)
         return constructor.newInstance(dataRepository)
     }

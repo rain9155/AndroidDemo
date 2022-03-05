@@ -1,6 +1,7 @@
 package com.example.androiddemo.media.audio
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.media.*
 import android.os.Build
 import android.os.Bundle
@@ -8,9 +9,9 @@ import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
+import com.example.androiddemo.databinding.ActivityAudioBinding
 import com.example.permission.IResultCallback
 import com.example.permission.PermissionHelper
-import kotlinx.android.synthetic.main.activity_audio.*
 import java.io.*
 
 /**
@@ -98,7 +99,8 @@ class AudioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_audio)
+        val binding = ActivityAudioBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         PermissionHelper.with(this).permissions(Manifest.permission.RECORD_AUDIO).request(object : IResultCallback{
             override fun onResult(
@@ -113,7 +115,7 @@ class AudioActivity : AppCompatActivity() {
         })
 
         //使用AudioRecord采集音频PCM并保存到文件
-        btn_record.setOnClickListener { v ->
+        binding.btnRecord.setOnClickListener { v ->
             val button = v as Button
             if(!isRecording()) {
                 if(startRecord()) {
@@ -127,7 +129,7 @@ class AudioActivity : AppCompatActivity() {
         }
 
         //使用AudioTack播放音频
-        btn_play.setOnClickListener { v ->
+        binding.btnPlay.setOnClickListener { v ->
             val button = v as Button
             if (!isPlaying()) {
                 if(playRecord()) {
@@ -144,6 +146,7 @@ class AudioActivity : AppCompatActivity() {
     /**
      * 开始录音
      */
+    @SuppressLint("MissingPermission")
     private fun startRecord(): Boolean {
         if(isRecording()) {
             return false

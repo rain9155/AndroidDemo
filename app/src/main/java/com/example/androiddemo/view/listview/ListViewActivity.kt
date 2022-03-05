@@ -16,7 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_listview.*
+import com.example.androiddemo.databinding.ActivityListviewBinding
 import kotlin.collections.ArrayList
 
 /**
@@ -76,21 +76,24 @@ class ListViewActivity : AppCompatActivity() {
         false
     }
 
+    private lateinit var binding: ActivityListviewBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_listview)
-        setSupportActionBar(toolbar as Toolbar)
+        binding = ActivityListviewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+
         touchSlop = ViewConfiguration.get(this).scaledTouchSlop //获取系统认为的最低滑动距离，即超过这个距离，系统就定义为滑动状态
 
         adapter = ListViewAdapter(this@ListViewActivity, datas)
-        listView.adapter = adapter
-        listView.setOnTouchListener(listener)
-
-        listView.lastVisiblePosition //获取可视视图区域内最后一个ItemID
-        listView.firstVisiblePosition //获取可视区域内第一个ItemID
-        listView.setSelection(5) //设置Listview需要显示在第几项，默认是第一项
+        binding.listView.adapter = adapter
+        binding.listView.setOnTouchListener(listener)
+        binding.listView.lastVisiblePosition //获取可视视图区域内最后一个ItemID
+        binding.listView.firstVisiblePosition //获取可视区域内第一个ItemID
+        binding.listView.setSelection(5) //设置Listview需要显示在第几项，默认是第一项
         //当ListView为空时显示的一张图片
-        listView.emptyView = findViewById(R.id.iv_empty)
+        binding.listView.emptyView = findViewById(R.id.iv_empty)
         val header = View(this)
         header.layoutParams = AbsListView.LayoutParams(
             AbsListView.LayoutParams.MATCH_PARENT,
@@ -98,16 +101,14 @@ class ListViewActivity : AppCompatActivity() {
             resources.getDimension(R.dimen.abc_action_bar_default_height_material).toInt()
         )
         //添加Header
-        listView.addHeaderView(header)
+        binding.listView.addHeaderView(header)
         //item点击监听
-        listView!!.onItemClickListener = OnItemClickListener { _, _, position, _ ->
+        binding.listView.onItemClickListener = OnItemClickListener { _, _, position, _ ->
             adapter!!.setCurrentItem(position)
             toast(this@ListViewActivity, "You Click $position")
         }
-
         //滑动监听 - OnScrollListener（AbsListView内）
-        listView.setOnScrollListener(object : AbsListView.OnScrollListener{
-
+        binding.listView.setOnScrollListener(object : AbsListView.OnScrollListener{
             /**
              * 滚动一直调用
              * @param firstVisibleItem 当前能看见的第一个ItemID（从零开始）
@@ -152,23 +153,20 @@ class ListViewActivity : AppCompatActivity() {
                     }
                 }
             }
-
         })
     }
 
-
     /**
      * 隐藏动画
-     * @param i
      */
     private fun toolbarAnim(i: Int) {
         if (o != null && o!!.isRunning) {
             o!!.cancel()
         }
-        if (i == 0) {
-            o = ObjectAnimator.ofFloat(toolbar, "translationY", -toolbar.height.toFloat(), 0f)
+        o = if (i == 0) {
+            ObjectAnimator.ofFloat(binding.toolbar, "translationY", -binding.toolbar.height.toFloat(), 0f)
         } else {
-            o = ObjectAnimator.ofFloat(toolbar, "translationY", 0f, -toolbar.height.toFloat())
+            ObjectAnimator.ofFloat(binding.toolbar, "translationY", 0f, -binding.toolbar.height.toFloat())
         }
         o!!.duration = 100
         o!!.start()

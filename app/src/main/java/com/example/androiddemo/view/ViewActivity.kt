@@ -4,35 +4,36 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androiddemo.R
+import com.example.androiddemo.databinding.ActivityViewBinding
 import com.example.androiddemo.view.listview.ListViewActivity
 import com.example.androiddemo.view.recyclerview.RecyclerViewActivity
 import com.example.androiddemo.view.scroller.ScrollerActivity
 import com.example.androiddemo.view.surfaceview.SurfaceViewActivity
 import com.example.androiddemo.view.viewdraghelper.DragActivity
-import kotlinx.android.synthetic.main.activity_view.*
 
 class ViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view)
+        val binding = ActivityViewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        cp_to_scroller.setOnClickListener {
+        binding.cpToScroller.setOnClickListener {
             startActivity(Intent(this, ScrollerActivity::class.java))
         }
 
-        cp_to_listview.setOnClickListener {
+        binding.cpToListview.setOnClickListener {
             startActivity(Intent(this, ListViewActivity::class.java))
         }
 
-        cp_to_recyclerview.setOnClickListener {
+        binding.cpToRecyclerview.setOnClickListener {
             startActivity(Intent(this, RecyclerViewActivity::class.java))
         }
 
-        cp_to_surfaceview.setOnClickListener {
+        binding.cpToSurfaceview.setOnClickListener {
             startActivity(Intent(this, SurfaceViewActivity::class.java))
         }
 
-        cp_to_draghelper.setOnClickListener {
+        binding.cpToDraghelper.setOnClickListener {
             startActivity(Intent(this, DragActivity::class.java))
         }
     }

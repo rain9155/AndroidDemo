@@ -10,8 +10,8 @@ import android.widget.SeekBar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.androiddemo.R
+import com.example.androiddemo.databinding.FragmentBottomBinding
 import com.example.androiddemo.jetpack.viewmodel.SharedViewModel
-import kotlinx.android.synthetic.main.fragment_bottom.*
 
 class BottomFragment : Fragment() {
 
@@ -19,11 +19,12 @@ class BottomFragment : Fragment() {
         private val TAG = this::class.java.simpleName
     }
 
+    private lateinit var binding: FragmentBottomBinding
     private lateinit var viewModel: SharedViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_bottom, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentBottomBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -33,10 +34,10 @@ class BottomFragment : Fragment() {
         } ?: throw Exception("invalid activity")
 
         viewModel.getProcess().observe(viewLifecycleOwner, Observer {
-            seek_bar.progress = it
+            binding.seekBar.progress = it
         })
 
-        seek_bar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        binding.seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
 
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 viewModel.setProcess(p1)

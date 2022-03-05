@@ -12,8 +12,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_layout_transition.*
+import com.example.androiddemo.databinding.ActivityLayoutTransitionBinding
 
 /**
  * 布局动画之animateLayoutChanges属性与LayoutTransition类:
@@ -53,20 +52,21 @@ class LayoutTransitionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_layout_transition)
+        val binding = ActivityLayoutTransitionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //给ll_items2布局添加ViewGroup动画
-        doLayoutTransition()
+        doLayoutTransition(binding.llItems2)
 
         //添加item
-        btn_add.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             val textView = TextView(this)
             textView.text = "item1"
             textView.textSize = 20f
             textView.setBackgroundColor(Color.RED)
             textView.setPadding(20, 20, 20, 20)
             textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            ll_items.addView(textView, 0)
+            binding.llItems.addView(textView, 0)
 
             val textView2 = TextView(this)
             textView2.text = "item1"
@@ -74,17 +74,17 @@ class LayoutTransitionActivity : AppCompatActivity() {
             textView2.setBackgroundColor(Color.RED)
             textView2.setPadding(20, 20, 20, 20)
             textView2.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            ll_items2.addView(textView2, 0)
+            binding.llItems2.addView(textView2, 0)
         }
 
         //删除控件
-        btn_remove.setOnClickListener{
-            if(ll_items.childCount != 0){
-                ll_items.removeViewAt(ll_items.childCount - 1)
+        binding.btnRemove.setOnClickListener{
+            if(binding.llItems.childCount != 0){
+                binding.llItems.removeViewAt(binding.llItems.childCount - 1)
             }
 
-            if(ll_items2.childCount != 0){
-                ll_items2.removeViewAt(ll_items2.childCount - 1)
+            if(binding.llItems2.childCount != 0){
+                binding.llItems2.removeViewAt(binding.llItems2.childCount - 1)
             }
         }
     }
@@ -93,7 +93,7 @@ class LayoutTransitionActivity : AppCompatActivity() {
      * LayoutTransition类使用
      */
     @SuppressLint("ObjectAnimatorBinding")
-    private fun  doLayoutTransition(){
+    private fun  doLayoutTransition(linearLayout: LinearLayout){
         /* 1、创建LayoutTransition */
         val layoutTransition = LayoutTransition()
 
@@ -113,12 +113,12 @@ class LayoutTransitionActivity : AppCompatActivity() {
         val pvhLeft = PropertyValuesHolder.ofInt("left", 0, 0) //必须
         val pvhTop = PropertyValuesHolder.ofInt("top", 1, 1) //必须
         val phv1 = PropertyValuesHolder.ofFloat("rotation", 0f, 360f, 0f)
-        val changeEnterAnim = ObjectAnimator.ofPropertyValuesHolder(ll_items2, phv1, pvhLeft, pvhTop)
+        val changeEnterAnim = ObjectAnimator.ofPropertyValuesHolder(linearLayout, phv1, pvhLeft, pvhTop)
         //某个item删除，其他item的动画 - CHANGE_DISAPPEARING动画
         val pvhLeft2 = PropertyValuesHolder.ofInt("left", 0, 0) //必须
         val pvhTop2 = PropertyValuesHolder.ofInt("top", 0, 0) //必须
         val phv2 = PropertyValuesHolder.ofFloat("rotation", 360f, 0f, 360f)
-        val changeLeaveAnim = ObjectAnimator.ofPropertyValuesHolder(ll_items2, phv2, pvhLeft2, pvhTop2)
+        val changeLeaveAnim = ObjectAnimator.ofPropertyValuesHolder(linearLayout, phv2, pvhLeft2, pvhTop2)
 
         /* 3、设置动画类型：transitionType */
         layoutTransition.setAnimator(LayoutTransition.APPEARING, enterAnim)
@@ -127,7 +127,7 @@ class LayoutTransitionActivity : AppCompatActivity() {
         layoutTransition.setAnimator(LayoutTransition.CHANGE_DISAPPEARING, changeLeaveAnim)
 
         /* 4、将LayoutTransaction设置进ViewGroup */
-        ll_items2.layoutTransition = layoutTransition
+        linearLayout.layoutTransition = layoutTransition
 
         /**
          * LayoutTransition设置监听

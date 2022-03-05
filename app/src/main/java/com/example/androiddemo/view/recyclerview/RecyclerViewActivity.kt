@@ -3,11 +3,10 @@ package com.example.androiddemo.view.recyclerview
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
-import com.example.androiddemo.R
+import com.example.androiddemo.databinding.ActivityRecyclerviewBinding
 import com.example.androiddemo.view.recyclerview.adapter.RecyclerViewAdapter
 import com.example.androiddemo.view.recyclerview.decoration.CustomItemDecoration
 import com.example.androiddemo.view.recyclerview.layoutmanager.CustomLayoutManager2
-import kotlinx.android.synthetic.main.activity_recyclerview.*
 import java.util.*
 
 /**
@@ -19,7 +18,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recyclerview)
+        val binding = ActivityRecyclerviewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         /* 初始化数据源 */
         initData()
@@ -37,27 +37,27 @@ class RecyclerViewActivity : AppCompatActivity() {
 //        }
 
         /* 自定义layoutManager */
-        recycler_view.layoutManager = CustomLayoutManager2()
+        binding.recyclerView.layoutManager = CustomLayoutManager2()
 
         /* 适配器 */
-        recycler_view.adapter = RecyclerViewAdapter(datas)
+        binding.recyclerView.adapter = RecyclerViewAdapter(datas)
 
         /* 为RecyclerView添加分割线，mRecyclerView.addItemDecoration()  */
-        recycler_view.addItemDecoration(
+        binding.recyclerView.addItemDecoration(
            CustomItemDecoration(this)
         )
+
         /*
             为RecyclerView添加item动画，mRecyclerView.setItemAnimator(new DefaultItemAnimator());
             注意：这里更新数据集不是用adapter.notifyDataSetChanged()， 而是notifyItemInserted(position)与notifyItemRemoved(position)
          */
-        recycler_view.itemAnimator = DefaultItemAnimator()
-
+        binding.recyclerView.itemAnimator = DefaultItemAnimator()
     }
 
     private fun initData() {
         datas = ArrayList()
-        var i = 'A'.toInt()
-        while (i < 'z'.toInt()) {
+        var i = 'A'.code
+        while (i < 'z'.code) {
             datas.add("" + i.toChar())
             i++
         }

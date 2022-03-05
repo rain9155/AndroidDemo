@@ -18,13 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_animation1"
+            android:id="@+id/cp_to_animation_xml"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="视图动画xml写法"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_animation2"
+            android:id="@+id/cp_to_animation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="视图动画代码写法"/>
@@ -66,7 +66,7 @@
             android:text="布局动画之LayoutAnimation"/>
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/cp_to_transition_animation"
+            android:id="@+id/cp_to_layout_transition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="布局动画之LayoutTransition"/>

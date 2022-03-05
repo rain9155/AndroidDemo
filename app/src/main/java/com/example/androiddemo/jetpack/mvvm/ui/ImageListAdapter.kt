@@ -1,12 +1,11 @@
 package com.example.androiddemo.jetpack.mvvm.ui
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.item_img.view.*
+import com.example.androiddemo.databinding.ItemImgBinding
 
 /**
  * 图片列表的Adapter
@@ -26,7 +25,7 @@ class ImageListAdapter : RecyclerView.Adapter<ImageListAdapter.ImageListViewHold
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageListViewHolder {
-        return ImageListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_img, null))
+        return ImageListViewHolder(ItemImgBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ImageListViewHolder, position: Int) {
@@ -35,14 +34,14 @@ class ImageListAdapter : RecyclerView.Adapter<ImageListAdapter.ImageListViewHold
         }
     }
 
-    class ImageListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ImageListViewHolder(val binding: ItemImgBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(imageUri: String){
-            Glide.with(itemView)
+            Glide.with(binding.root)
                 .asDrawable()
                 .load(imageUri)
                 .error(R.drawable.girl)
-                .into(itemView.iv_img)
+                .into(binding.ivImg)
         }
 
     }

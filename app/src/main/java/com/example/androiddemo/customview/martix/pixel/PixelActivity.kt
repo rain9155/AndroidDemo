@@ -7,7 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_pixel.*
+import com.example.androiddemo.databinding.ActivityPixelBinding
 import kotlin.math.sin
 
 /**
@@ -42,14 +42,15 @@ class PixelActivity : AppCompatActivity() {
         private const val WIDTH = 20
     }
 
-    lateinit var bitmap: Bitmap
-    lateinit var origPxl: IntArray
-    var width = 0
-    var height = 0
+    private lateinit var bitmap: Bitmap
+    private lateinit var origPxl: IntArray
+    private var width = 0
+    private var height = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pixel)
+        val binding = ActivityPixelBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //初始化照片
         bitmap = BitmapFactory.decodeResource(resources, R.drawable.girl)
@@ -61,20 +62,20 @@ class PixelActivity : AppCompatActivity() {
         bitmap.getPixels(origPxl, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
 
         //还原
-        btn_reset.setOnClickListener {
+        binding.btnReset.setOnClickListener {
             val newBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
             newBitmap.setPixels(origPxl, 0, width, 0, 0, width, height)
-            iv_girl.setImageBitmap(newBitmap)
+            binding.ivGirl.setImageBitmap(newBitmap)
         }
 
         //图片的像素点处理
-        btn_change1.setOnClickListener {
-            iv_girl.setImageBitmap(handleImageNegative(bitmap))
+        binding.btnChange1.setOnClickListener {
+            binding.ivGirl.setImageBitmap(handleImageNegative(bitmap))
         }
 
         //图片的像素块处理
-        btn_change2.setOnClickListener {
-            iv_girl.setImageBitmap(handleImageShape(bitmap))
+        binding.btnChange2.setOnClickListener {
+            binding.ivGirl.setImageBitmap(handleImageShape(bitmap))
         }
 
     }

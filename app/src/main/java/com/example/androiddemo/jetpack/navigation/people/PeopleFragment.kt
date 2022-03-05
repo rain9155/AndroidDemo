@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.androiddemo.R
+import com.example.androiddemo.databinding.FragmentPeopleBinding
 import com.example.androiddemo.jetpack.navigation.isLogin
-import kotlinx.android.synthetic.main.fragment_people.*
 
 /**
  * 使用safeArgs进行参数传递:
@@ -25,18 +25,17 @@ class PeopleFragment : Fragment() {
         private val TAG = PeopleFragment::class.java.simpleName
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    private lateinit var binding: FragmentPeopleBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.d(TAG, "onCreateView()")
-        return inflater.inflate(R.layout.fragment_people, container, false)
+        binding = FragmentPeopleBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        btn_jump.setOnClickListener {
+        binding.btnJump.setOnClickListener {
             //findNavController().navigate(R.id.action_peopleFragment_to_collectionFragment)
 
             //根据生成的XXDirections获得对应的操作NavDirections实例，然后在构造中传入需要传递的参数值
@@ -52,7 +51,6 @@ class PeopleFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         if(!isLogin){
             findNavController().navigate(R.id.action_peopleFragment_to_nav_login)
         }

@@ -20,7 +20,7 @@ import androidx.appcompat.widget.AppCompatButton
  * 3、startScroll（）开启模拟过程
  * Created by ASUS on 2018/6/14.
  */
-class ScrollerButton(context: Context?, attrs: AttributeSet?) : AppCompatButton(context, attrs) {
+class ScrollerButton(context: Context, attrs: AttributeSet) : AppCompatButton(context, attrs) {
 
     companion object{
         private val TAG = ScrollerButton::class.java.simpleName

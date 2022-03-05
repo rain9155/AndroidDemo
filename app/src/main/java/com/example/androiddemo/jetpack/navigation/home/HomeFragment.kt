@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.example.androiddemo.databinding.FragmentHomeBinding
 
 const val KEY_ARTICLE_ID = "articleId"
 const val KEY_ARTICLE_AUTHOR = "articleAuthor"
@@ -25,17 +25,20 @@ class HomeFragment : Fragment() {
         private val TAG = HomeFragment::class.java.simpleName
     }
 
+    private lateinit var binding: FragmentHomeBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d(TAG, "onCreateView()")
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn_jump.setOnClickListener {
+        binding.btnJump.setOnClickListener {
             //通过NavController的navigate方法进行跳转，传入action id
             //findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
 
@@ -48,9 +51,4 @@ class HomeFragment : Fragment() {
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-
-    }
 }

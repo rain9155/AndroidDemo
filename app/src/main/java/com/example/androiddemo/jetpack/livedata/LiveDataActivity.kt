@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.*
-import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_livedata.*
+import com.example.androiddemo.databinding.ActivityLivedataBinding
 
 /**
  * 参考：
@@ -52,7 +51,7 @@ class LiveDataActivity : AppCompatActivity() {
 
     /** 2、实现Observer接口的onChange方法 */
     private val stringObserver: Observer<String> = Observer {
-        tv_string.text = it
+        binding.tvString.text = it
     }
 
     private var control = false
@@ -69,9 +68,9 @@ class LiveDataActivity : AppCompatActivity() {
      */
     private val transformedLiveData: LiveData<Any> = Transformations.switchMap(boolLiveData){
         if(it){
-            MutableLiveData<Any>(9155)
+            MutableLiveData(9155)
         }else{
-            MutableLiveData<Any>(9155.0)
+            MutableLiveData(9155.0)
         }
     }
 
@@ -82,9 +81,12 @@ class LiveDataActivity : AppCompatActivity() {
     /** 用来监听多个数据源更新的MediatorLiveData */
     private val mergeLiveData: MediatorLiveData<String> = MediatorLiveData()
 
+    private lateinit var binding: ActivityLivedataBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_livedata)
+        binding = ActivityLivedataBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         /** 3、使用observe方法观察LiveData，并传入Observer对象和LifecycleOwner对象 */
         stringLiveData.observe(this, stringObserver)
@@ -96,7 +98,7 @@ class LiveDataActivity : AppCompatActivity() {
             Log.d(TAG, "onCreate(): stringLiveData change, date = $it")
         }
 
-        btn_change.setOnClickListener {
+        binding.btnChange.setOnClickListener {
             /** 4、调用LiveData的setValue/postValue方法更新数据 */
             //setValue方法在main thread调用，postValue方法在work thread调用
             stringLiveData.value = "改变后的值"

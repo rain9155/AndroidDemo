@@ -5,7 +5,8 @@ import android.view.animation.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_animation.*
+import com.example.androiddemo.databinding.ActivityAnimBinding
+import com.example.androiddemo.databinding.ActivityAnimationBinding
 
 /**
  * 视图动画之通过java代码实现alpha、scale、translate、rotate、set动画效果:
@@ -47,7 +48,8 @@ class AnimationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_animation)
+        val binding = ActivityAnimationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         /* 缩放动画 */
         val scaleAnimation = ScaleAnimation(
@@ -61,8 +63,8 @@ class AnimationActivity : AppCompatActivity() {
             duration =
                 DURATION
         }
-        btn_scale.setOnClickListener{
-            text_view.startAnimation(scaleAnimation)
+        binding.btnScale.setOnClickListener{
+            binding.textView.startAnimation(scaleAnimation)
         }
 
         /* 调节透明度动画 */
@@ -72,8 +74,8 @@ class AnimationActivity : AppCompatActivity() {
             duration =
                 DURATION
         }
-        btn_alpha.setOnClickListener{
-            text_view.startAnimation(alphaAnimation)
+        binding.btnAlpha.setOnClickListener{
+            binding.textView.startAnimation(alphaAnimation)
         }
 
         /* 旋转动画 */
@@ -87,10 +89,9 @@ class AnimationActivity : AppCompatActivity() {
             duration =
                 DURATION
         }
-        btn_rotate.setOnClickListener{
-            text_view.startAnimation(rotateAnimation)
+        binding.btnRotate.setOnClickListener{
+            binding.textView.startAnimation(rotateAnimation)
         }
-
 
         /* 平移动画 */
         val translateAnimation = TranslateAnimation(
@@ -104,10 +105,9 @@ class AnimationActivity : AppCompatActivity() {
             duration =
                 DURATION
         }
-        btn_translate.setOnClickListener{
-            text_view.startAnimation(translateAnimation)
+        binding.btnTranslate.setOnClickListener{
+            binding.textView.startAnimation(translateAnimation)
         }
-
 
         /* 几个不同的动画定义成一个组 */
         val setAnimation = AnimationSet(false)
@@ -119,11 +119,11 @@ class AnimationActivity : AppCompatActivity() {
             animations.add(translateAnimation)
             animations.add(rotateAnimation)
         }
-        btn_set.setOnClickListener{
-            text_view.startAnimation(setAnimation)
+        binding.btnSet.setOnClickListener{
+            binding.textView.startAnimation(setAnimation)
         }
 
-        text_view.setOnClickListener {
+        binding.textView.setOnClickListener {
             Toast.makeText(this, "Hello!", Toast.LENGTH_SHORT)
                 .show()
         }

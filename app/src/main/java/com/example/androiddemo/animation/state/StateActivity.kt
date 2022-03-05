@@ -5,7 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddemo.R
-import kotlinx.android.synthetic.main.activity_state.*
+import com.example.androiddemo.databinding.ActivityStateBinding
 
 /**
  * 视图状态动画：
@@ -19,15 +19,15 @@ import kotlinx.android.synthetic.main.activity_state.*
  */
 class StateActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_state)
+        val binding = ActivityStateBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //StateListAnimator通过代码加载
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val stateListAnimator = AnimatorInflater.loadStateListAnimator(this, R.animator.selector_press_state)
-            tv_state_anim.stateListAnimator = stateListAnimator
+            binding.tvStateAnim.stateListAnimator = stateListAnimator
         }
     }
 }
