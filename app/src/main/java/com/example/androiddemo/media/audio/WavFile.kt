@@ -122,6 +122,14 @@ class WavFile {
         }
 
         /**
+         * 判断wav文件是否读取完毕
+         */
+        @Throws(IOException::class)
+        fun available(): Boolean {
+            return dataIs?.available()!! > 0
+        }
+
+        /**
          * 读取wav文件的data区域
          */
         @Throws(IOException::class)

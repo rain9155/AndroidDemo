@@ -12,6 +12,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_audio.xml" value="0.1" />
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_bitmap.xml" value="0.16666666666666666" />
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_layout_animation.xml" value="0.1" />
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_listview.xml" value="0.16666666666666666" />
@@ -23,6 +24,7 @@
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_set_animator.xml" value="0.1" />
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_state.xml" value="0.12409420289855072" />
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_value_animator.xml" value="0.1" />
+        <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_video.xml" value="0.1" />
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/activity_view.xml" value="0.12409420289855072" />
         <entry key="..\:/File/source/android/AndroidDemo/app/src/main/res/layout/item_img.xml" value="0.16666666666666666" />
       </map>

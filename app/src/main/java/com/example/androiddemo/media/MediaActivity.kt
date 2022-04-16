@@ -7,6 +7,13 @@ import com.example.androiddemo.databinding.ActivityMediaBinding
 import com.example.androiddemo.media.audio.AudioActivity
 import com.example.androiddemo.media.video.VideoActivity
 
+/**
+ * android音视频学习
+ *
+ * 参考文档：
+ * - [视音频编解码技术零基础学习方法](https://blog.csdn.net/leixiaohua1020/article/details/18893769)
+ * - [Android supported media-formats](https://developer.android.com/guide/topics/media/media-formats?hl=zh-cn)
+ */
 class MediaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
