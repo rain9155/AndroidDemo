@@ -38,6 +38,7 @@ class AudioActivity : AppCompatActivity() {
             ) {
                 if(!isAllGrant) {
                     Log.e(TAG, "no RECORD_AUDIO permission")
+                    finish()
                 }
             }
         })
