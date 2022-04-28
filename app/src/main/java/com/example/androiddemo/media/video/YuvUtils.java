@@ -9,7 +9,7 @@ import android.media.Image;
 public class YuvUtils {
 
     /**
-     * 从image中获取nv21数据
+     * 从image中获取nv21数据, 参考https://www.jianshu.com/p/c88f3b1c736b
      */
     public static byte[] imageI420ToNV21(Image image) {
         try {
