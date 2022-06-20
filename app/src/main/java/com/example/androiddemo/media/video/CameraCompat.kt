@@ -94,7 +94,7 @@ class CameraCompat(
     private var cameraCaptureSession: CameraCaptureSession? = null
     private var previewCaptureRequest: CaptureRequest.Builder? = null
     private var imageReader by Delegates.notNull<ImageReader>()
-    private var supportCamera2 = isSupportCamera2()
+    private val supportCamera2 by lazy { isSupportCamera2() }
 
     private val mainHandler = Handler(Looper.getMainLooper())
     private val callbackExecutor = Executor { command ->
