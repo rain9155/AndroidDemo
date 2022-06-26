@@ -14,6 +14,7 @@ import java.io.*
  * 参考文档：
  *  - [WAVE PCM soundfile format](http://soundfile.sapp.org/doc/WaveFormat/)
  *  - [如何存储和解析wav文件](https://blog.51cto.com/ticktick/1752947)
+ *  - [PCM / WAV格式](https://www.cnblogs.com/renhui/p/12148330.html)
  */
 class WavFile {
 
