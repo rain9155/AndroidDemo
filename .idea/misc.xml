@@ -9,6 +9,19 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/source/android/AndroidDemo/app/src/main/res/layout/activity_client.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/source/android/AndroidDemo/app/src/main/res/layout/activity_ipc.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/Admin/source/android/AndroidDemo/app/src/main/res/layout/activity_ipcactivity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/source/android/AndroidDemo/app/src/main/res/layout/activity_jetpack.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/source/android/AndroidDemo/app/src/main/res/layout/activity_main.xml" value="0.19293478260869565" />
+        <entry key="..\:/Users/Admin/source/android/AndroidDemo/app/src/main/res/layout/activity_view.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

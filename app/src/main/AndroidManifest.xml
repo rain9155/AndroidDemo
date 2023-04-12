@@ -163,7 +163,17 @@
             android:label="@string/title_activity_audio" />
         <activity
             android:name=".media.video.VideoActivity"
-            android:label="@string/title_activity_video"/>
+            android:label="@string/title_activity_video" />
+        <activity
+            android:name=".ipc.IPCActivity"
+            android:label="@string/title_activity_ipc"/>
+        <activity
+            android:name=".ipc.aidl.ClientActivity"
+            android:label="@string/title_activity_client"/>
+
+        <service android:name=".ipc.aidl.RemoteService"
+            android:enabled="true"
+            android:process="com.example.aidltest.remote"/>
 
         <!-- AppStartup的ContentProvider，通过Merge rule markers编写Initializer合并规则(https://developer.android.com/studio/build/manifest-merge#merge_rule_markers) -->
         <provider

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">AndroidDemo</string>
     <string name="title_activity_anim">AnimActivity</string>
+    <string name="title_activity_ipc">IPCActivity</string>
+    <string name="title_activity_client">AIDLActivity</string>
     <string name="title_activity_animation">AnimationActivity</string>
     <string name="title_activity_animation_xml">AnimationXmlActivity</string>
     <string name="title_activity_value_animator">ValueAnimatorActivity</string>
