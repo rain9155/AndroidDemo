@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -25,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".animation.AnimActivity"
             android:label="@string/title_activity_anim" />
@@ -166,14 +168,18 @@
             android:label="@string/title_activity_video" />
         <activity
             android:name=".ipc.IPCActivity"
-            android:label="@string/title_activity_ipc"/>
+            android:label="@string/title_activity_ipc" />
         <activity
             android:name=".ipc.aidl.ClientActivity"
-            android:label="@string/title_activity_client"/>
+            android:label="@string/title_activity_client" />
+        <activity
+            android:name=".jni.JNIActivity"
+            android:label="@string/title_activity_jni" />
 
-        <service android:name=".ipc.aidl.RemoteService"
+        <service
+            android:name=".ipc.aidl.RemoteService"
             android:enabled="true"
-            android:process="com.example.aidltest.remote"/>
+            android:process="com.example.aidltest.remote" />
 
         <!-- AppStartup的ContentProvider，通过Merge rule markers编写Initializer合并规则(https://developer.android.com/studio/build/manifest-merge#merge_rule_markers) -->
         <provider

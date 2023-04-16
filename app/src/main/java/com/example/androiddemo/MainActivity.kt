@@ -10,6 +10,7 @@ import com.example.androiddemo.material.ToolbarActivity
 import com.example.androiddemo.customview.CustomViewActivity
 import com.example.androiddemo.databinding.ActivityMainBinding
 import com.example.androiddemo.ipc.IPCActivity
+import com.example.androiddemo.jni.JNIActivity
 import com.example.androiddemo.media.MediaActivity
 import com.example.androiddemo.view.ViewActivity
 
@@ -56,6 +57,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.cpToIpc.setOnClickListener {
             startActivity(Intent(this, IPCActivity::class.java))
+        }
+
+        binding.cpToJni.setOnClickListener {
+            startActivity(Intent(this, JNIActivity::class.java))
         }
     }
 }
