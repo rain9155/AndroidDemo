@@ -42,7 +42,7 @@ import kotlin.properties.Delegates
  * 4、调用CameraDevice的createCaptureRequest方法创建请求CaptureRequest，有六种类型的请求，预览请求为CameraDevice.TEMPLATE_PREVIEW；
  * 5、接着调用CameraDevice的createCaptureSession方法创建会话CameraCaptureSession，并传入CameraCaptureSession.StateCallback；
  * 6、同时在创建的CaptureRequest和CameraCaptureSession中传入预览的SurfaceView或TextureView的Surface和获取预览数据的ImageReader的Surface；
- * 7、同时通过ImageReader的setOnImageAvailableListener方法监听预览的回调，取到YUV_420_888(可配置)格式的数据回调；
+ * 7、同时通过ImageReader的setOnImageAvailableListener方法监听预览的回调，取到YUV_420_888(可配置，为I420)格式的数据回调
  * 7、当CameraCaptureSession.StateCallback的onConfigured方法回调时获取CameraCaptureSession实例，调用它的setRepeatingRequest方法持续的进行预览，这时就可以在控件中看到实时的预览画面；
  * 8、当不需要预览时调用CameraCaptureSession的close方法停止预览；
  * 9、当不需要摄像头时调用cameraDevice的close方法释放摄像头资源
@@ -59,7 +59,7 @@ import kotlin.properties.Delegates
  * - packed打包模式：每个像素点的Y、U、V分量是连续交替存储的，如YUVYUVYUVYUV
  * 根据采样方式和存储格式的不同，就有了多种YUV格式，这些格式主要是基于YUV 4:2:2和YUV 4:2:0采样：
  * - 常见的基于YUV 4:2:2采样的YUV格式：YUYV格式(packed)、UYVY格式(packed)、YUV 422P格式(planar)
- * - 常见的基于YUV 4:2:0采样的YUV格式：YUV 420P类型(YV12格式，YU12格式)(three-planar)、YUV 420SP类型(NV12 格式、NV21 格式)(two-planar)
+ * - 常见的基于YUV 4:2:0采样的YUV格式：YUV 420P类型(YV12格式，YU12格式-又称I420)(three-planar)、YUV 420SP类型(NV12 格式、NV21 格式)(two-planar)
  *
  * 参考文档：
  * - [YUV Pixel Formats](https://www.fourcc.org/yuv/)

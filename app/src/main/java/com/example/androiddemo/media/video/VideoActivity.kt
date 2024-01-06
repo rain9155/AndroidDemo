@@ -1,6 +1,7 @@
 package com.example.androiddemo.media.video
 
 import android.Manifest
+import android.media.MediaCodec
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,9 +11,7 @@ import com.example.permission.IResultCallback
 import com.example.permission.PermissionHelper
 
 /**
- * Android视音频开发之视频采集（Camera），解编码（MediaCodec），音视频合成mp4（MediaMuxer ）
- *
- * 使用MediaCodecAPI解编码（完成音频 AAC 硬编、硬解，完成视频 H.264 的硬编、硬解）
+ * Android视频采集（Camera）, 通过Camera采集NV21格式的画面数据
  */
 class VideoActivity : AppCompatActivity() {
 
