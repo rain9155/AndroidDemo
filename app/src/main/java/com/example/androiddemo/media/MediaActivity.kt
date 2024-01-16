@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androiddemo.databinding.ActivityMediaBinding
 import com.example.androiddemo.media.audio.AudioActivity
+import com.example.androiddemo.media.opengl.OpenGLESActivity
 import com.example.androiddemo.media.video.VideoActivity
 
 /**
@@ -28,6 +29,10 @@ class MediaActivity : AppCompatActivity() {
 
         binding.cpToVideo.setOnClickListener {
             startActivity(Intent(this, VideoActivity::class.java))
+        }
+
+        binding.cpToOpengl.setOnClickListener {
+            startActivity(Intent(this, OpenGLESActivity::class.java))
         }
     }
 }
